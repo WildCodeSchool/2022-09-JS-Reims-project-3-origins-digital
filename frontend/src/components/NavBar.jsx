@@ -3,7 +3,7 @@ import "./NavBar.css";
 
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [lenght, setLenght] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu);
@@ -11,7 +11,7 @@ export default function NavBar() {
 
   useEffect(() => {
     const changeWidth = () => {
-      setLenght(window.innerWidth);
+      setWidth(window.innerWidth);
 
       if (window.innerWidth > 500) {
         setToggleMenu(false);
@@ -27,7 +27,7 @@ export default function NavBar() {
 
   return (
     <nav>
-      {(toggleMenu || lenght > 500) && (
+      {(toggleMenu || width > 500) && (
         <ul className="liste">
           <li className="items">ÉQUIPE PREMIÈRE</li>
           <li className="items">FORMATION</li>
