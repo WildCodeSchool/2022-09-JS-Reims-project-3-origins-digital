@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <p> carousel 3</p>
         <h1> Section 3</h1>
         <p> carousel 4</p>
+        <Carousel />
       </main>
       <footer>footer</footer>
     </>
