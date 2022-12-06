@@ -13,6 +13,7 @@ export default function Home() {
       <main>
         <Carousel />
       </main>
+      <footer>footer</footer>
     </>
   );
 }
