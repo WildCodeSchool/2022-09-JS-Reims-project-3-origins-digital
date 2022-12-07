@@ -1,7 +1,20 @@
+import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Carousel from "../components/Carousel";
 
 export default function Home() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/movies`
+    )
+      .then((response) => response.json())
+      .then((data) => setVideos(data));
+  }, []);
+
+  console.warn(videos);
+
   return (
     <>
       <header className="App-header">
