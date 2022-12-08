@@ -5,7 +5,7 @@ body {
 .logo {
   flex-direction: row;
   justify-content: center;
-  width: 35%;
+  width: 25%;
 }
 
 .NavBar_links {

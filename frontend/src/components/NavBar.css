@@ -3,43 +3,51 @@
   src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
 
-nav {
-  height: 50px;
-}
-
 .liste {
-  flex-direction: column;
-  height: 200px;
+  font-family: "Gilroy";
+  list-style-type: none;
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
-.items:nth-child(1) {
-  border-top: 1px solid #fff;
-}
+
 .items {
-  height: 50px;
-  width: 100%;
-  border-bottom: 1px solid #fff;
-  line-height: 50px;
+  margin-right: 10px;
+  color: #f1f1f1;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 .btn {
   display: none;
 }
-@media screen and (min-width: 600px) {
+
+@media screen and (max-width: 500px) {
   .liste {
-    font-family: "Gilroy";
-    list-style-type: none;
-    height: 100%;
+    flex-direction: column;
+    height: 200px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 0;
-    padding: 0;
+  }
+  .items:nth-child(1) {
+    border-top: 1px solid #fff;
   }
   .items {
-    margin-right: 10px;
-    color: #f1f1f1;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    line-height: 50px;
+  }
+  .btn {
+    display: block;
+    justify-items: center;
+    right: 10px;
+    top: 10px;
+    color: #333;
     cursor: pointer;
   }
 }
