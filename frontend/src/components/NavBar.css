@@ -50,7 +50,7 @@ nav {
   }
   .btn {
     display: block;
-    position: absolute;
+    justify-items: center;
     right: 10px;
     top: 10px;
     color: #333;
