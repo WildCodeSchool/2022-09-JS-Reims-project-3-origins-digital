@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import NavBar from "../components/NavBar";
@@ -7,7 +6,6 @@ import "./Home.css";
 import SearchBar from "../components/SearchBar";
 
 export default function Home() {
-
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
