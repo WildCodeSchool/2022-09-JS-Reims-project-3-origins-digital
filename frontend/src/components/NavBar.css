@@ -3,14 +3,9 @@
   src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
 
-nav {
-  height: 50px;
-}
-
 .liste {
   font-family: "Gilroy";
   list-style-type: none;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +20,6 @@ nav {
   cursor: pointer;
   padding-left: 10px;
   padding-right: 10px;
-  height: 90%;
 }
 
 .btn {
