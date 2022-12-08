@@ -7,7 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch(
-      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/movies`
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/videos`
     )
       .then((response) => response.json())
       .then((data) => setVideos(data));
