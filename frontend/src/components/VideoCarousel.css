@@ -1,0 +1,13 @@
+.thumbnail {
+  width: 12rem;
+  height: auto;
+}
+.scroll {
+  scroll-snap-type: x;
+  overflow-x: scroll;
+  display: flex;
+  color: white;
+}
+h1 {
+  color: white;
+}

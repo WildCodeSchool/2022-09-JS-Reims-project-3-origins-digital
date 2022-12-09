@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
 
-export default function Carousel() {
+export default function ImageCarousel() {
   return (
     <Swiper pagination modules={[Pagination]} className="mySwiper">
       <SwiperSlide>Slide 1</SwiperSlide>

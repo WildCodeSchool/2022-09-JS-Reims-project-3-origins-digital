@@ -1,9 +1,9 @@
 .App-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .search {
-  padding: 2px;
   height: 2rem;
   width: 2rem;
   background: none;

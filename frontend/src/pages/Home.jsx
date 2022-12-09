@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import NavBar from "../components/NavBar";
-import Carousel from "../components/Carousel";
+import ImageCarousel from "../components/ImageCarousel";
 import "./Home.css";
 import SearchBar from "../components/SearchBar";
+import VideosByCategory from "../components/VideosByCategory";
 
 export default function Home() {
   const [videos, setVideos] = useState([]);
@@ -22,12 +23,12 @@ export default function Home() {
   return (
     <>
       <header className="App-header">
+        <NavBar />
         <img
           className="logo"
           alt="Origins Digital Logo"
           src="./src/assets/OriginsLogo.png"
         />
-        <NavBar />
         {search === false && (
           <button
             type="submit"
@@ -40,15 +41,8 @@ export default function Home() {
         {search === true && <SearchBar />}
       </header>
       <main>
-        <h1> Fixtures</h1>
-        <p> carousel 1</p>
-        <h1> Section 1</h1>
-        <p> carousel 2</p>
-        <h1> Section 2</h1>
-        <p> carousel 3</p>
-        <h1> Section 3</h1>
-        <p> carousel 4</p>
-        <Carousel />
+        <ImageCarousel />
+        <VideosByCategory />
       </main>
       <footer>footer</footer>
     </>
