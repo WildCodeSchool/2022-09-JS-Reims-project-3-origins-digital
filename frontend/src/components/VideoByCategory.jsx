@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
 import VideoCategory from "./VideoCategory";
+import videos from "../pages/Videos";
 
-export default function VideoByCategory({ videos }) {
+export default function VideoByCategory() {
   const categories = ["Football", "Baseball", "BasketBall"];
   return (
     <>
@@ -15,6 +15,3 @@ export default function VideoByCategory({ videos }) {
     </>
   );
 }
-VideoCategory.propTypes = {
-  videos: PropTypes.arrayOf(PropTypes.shape).isRequired,
-};

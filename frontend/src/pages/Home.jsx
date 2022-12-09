@@ -5,7 +5,6 @@ import Carousel from "../components/Carousel";
 import "./Home.css";
 import SearchBar from "../components/SearchBar";
 import VideoByCategory from "../components/VideoByCategory";
-import videos from "./Videos";
 
 export default function Home() {
   const [search, setSearch] = useState(false);
@@ -31,7 +30,7 @@ export default function Home() {
       </header>
       <main>
         <Carousel />
-        <VideoByCategory videos={videos} />
+        <VideoByCategory />
       </main>
       <footer>footer</footer>
     </>
