@@ -1,22 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import NavBar from "../components/NavBar";
-import Carousel from "../components/Carousel";
+import ImageCarousel from "../components/ImageCarousel";
 import "./Home.css";
 import SearchBar from "../components/SearchBar";
-import VideoByCategory from "../components/VideoByCategory";
+import VideosByCategory from "../components/VideosByCategory";
 
 export default function Home() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/videos`
+    )
+      .then((response) => response.json())
+      .then((data) => setVideos(data));
+  }, []);
+
+  console.warn(videos);
+
   const [search, setSearch] = useState(false);
   return (
     <>
       <header className="App-header">
+        <NavBar />
         <img
           className="logo"
           alt="Origins Digital Logo"
           src="./src/assets/OriginsLogo.png"
         />
-        <NavBar />
         {search === false && (
           <button
             type="submit"
@@ -29,8 +41,8 @@ export default function Home() {
         {search === true && <SearchBar />}
       </header>
       <main>
-        <Carousel />
-        <VideoByCategory />
+        <ImageCarousel />
+        <VideosByCategory />
       </main>
       <footer>footer</footer>
     </>
