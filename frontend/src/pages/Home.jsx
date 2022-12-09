@@ -4,6 +4,8 @@ import NavBar from "../components/NavBar";
 import Carousel from "../components/Carousel";
 import "./Home.css";
 import SearchBar from "../components/SearchBar";
+import VideoByCategory from "../components/VideoByCategory";
+import videos from "./Videos";
 
 export default function Home() {
   const [search, setSearch] = useState(false);
@@ -28,15 +30,8 @@ export default function Home() {
         {search === true && <SearchBar />}
       </header>
       <main>
-        <h1> Fixtures</h1>
-        <p> carousel 1</p>
-        <h1> Section 1</h1>
-        <p> carousel 2</p>
-        <h1> Section 2</h1>
-        <p> carousel 3</p>
-        <h1> Section 3</h1>
-        <p> carousel 4</p>
         <Carousel />
+        <VideoByCategory videos={videos} />
       </main>
       <footer>footer</footer>
     </>
