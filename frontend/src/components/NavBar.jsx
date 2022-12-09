@@ -27,6 +27,9 @@ export default function NavBar() {
 
   return (
     <nav>
+      <button type="button" onClick={toggleNavSmallScreen} className="btn">
+        Menu
+      </button>
       {(toggleMenu || width > 500) && (
         <ul className="liste">
           <li className="items">ÉQUIPE PREMIÈRE</li>
@@ -34,9 +37,6 @@ export default function NavBar() {
           <li className="items">LÉGENDE</li>
         </ul>
       )}
-      <button type="button" onClick={toggleNavSmallScreen} className="btn">
-        BTN
-      </button>
     </nav>
   );
 }
