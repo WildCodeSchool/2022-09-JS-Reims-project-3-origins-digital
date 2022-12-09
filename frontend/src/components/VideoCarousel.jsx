@@ -1,4 +1,4 @@
-import "./VideoCategory.css";
+import "./VideoCarousel.css";
 import PropTypes from "prop-types";
 
 export default function VideoCarousel({ title, videos }) {
