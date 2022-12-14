@@ -1,4 +1,5 @@
 const express = require("express");
+const { hashPassword } = require("./auth");
 
 const router = express.Router();
 
@@ -20,8 +21,8 @@ router.delete("/videos/:id", videoControllers.destroyVideo);
 
 router.get("/users", userControllers.getUsers);
 router.get("/users/:id", userControllers.getOneUser);
-router.put("/users/:id", userControllers.editUser);
-router.post("/users", userControllers.addUser);
+router.put("/users/:id", hashPassword, userControllers.editUser);
+router.post("/users", hashPassword, userControllers.addUser);
 router.delete("/users/:id", userControllers.destroyUser);
 
 module.exports = router;
