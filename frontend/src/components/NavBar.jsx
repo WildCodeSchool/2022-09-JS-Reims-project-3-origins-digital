@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./NavBar.css";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -27,9 +28,16 @@ export default function NavBar() {
 
   return (
     <nav>
-      <button type="button" onClick={toggleNavSmallScreen} className="btn">
-        Menu
-      </button>
+      {toggleMenu === false && (
+        <button type="button" onClick={toggleNavSmallScreen} className="btn">
+          <RxHamburgerMenu className="menuIcon" />
+        </button>
+      )}
+      {toggleMenu === true && (
+        <button type="button" onClick={toggleNavSmallScreen} className="btn">
+          <RxCross1 className="menuIcon" />
+        </button>
+      )}
       {(toggleMenu || width > 500) && (
         <ul className="liste">
           <li className="items">ÉQUIPE PREMIÈRE</li>
