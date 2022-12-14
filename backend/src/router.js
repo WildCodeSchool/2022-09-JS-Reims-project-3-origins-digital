@@ -4,6 +4,7 @@ const router = express.Router();
 
 const itemControllers = require("./controllers/itemControllers");
 const videoControllers = require("./controllers/videoControllers");
+const userControllers = require("./controllers/userControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -13,5 +14,14 @@ router.delete("/items/:id", itemControllers.destroy);
 
 router.get("/videos", videoControllers.getVideos);
 router.get("/videos/:id", videoControllers.getOneVideo);
+router.put("/videos/:id", videoControllers.editVideo);
+router.post("/videos", videoControllers.addVideo);
+router.delete("/videos/:id", videoControllers.destroyVideo);
+
+router.get("/users", userControllers.getUsers);
+router.get("/users/:id", userControllers.getOneUser);
+router.put("/users/:id", userControllers.editUser);
+router.post("/users", userControllers.addUser);
+router.delete("/users/:id", userControllers.destroyUser);
 
 module.exports = router;

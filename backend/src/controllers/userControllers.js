@@ -1,7 +1,7 @@
 const models = require("../models");
 
-const getVideos = (req, res) => {
-  models.video
+const getUsers = (req, res) => {
+  models.user
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -11,8 +11,8 @@ const getVideos = (req, res) => {
       res.sendStatus(500);
     });
 };
-const getOneVideo = (req, res) => {
-  models.video
+const getOneUser = (req, res) => {
+  models.user
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -26,15 +26,15 @@ const getOneVideo = (req, res) => {
       res.sendStatus(500);
     });
 };
-const editVideo = (req, res) => {
-  const video = req.body;
+const editUser = (req, res) => {
+  const user = req.body;
 
   // TODO validations (length, format...)
 
-  video.id = parseInt(req.params.id, 10);
+  user.id = parseInt(req.params.id, 10);
 
-  models.video
-    .update(video)
+  models.user
+    .update(user)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -47,15 +47,15 @@ const editVideo = (req, res) => {
       res.sendStatus(500);
     });
 };
-const addVideo = (req, res) => {
-  const video = req.body;
+const addUser = (req, res) => {
+  const user = req.body;
 
   // TODO validations (length, format...)
 
-  models.video
-    .insert(video)
+  models.user
+    .insert(user)
     .then(([result]) => {
-      res.location(`/videos/${result.insertId}`).sendStatus(201);
+      res.location(`/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -63,8 +63,8 @@ const addVideo = (req, res) => {
     });
 };
 
-const destroyVideo = (req, res) => {
-  models.video
+const destroyUser = (req, res) => {
+  models.user
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -80,9 +80,9 @@ const destroyVideo = (req, res) => {
 };
 
 module.exports = {
-  getVideos,
-  getOneVideo,
-  editVideo,
-  addVideo,
-  destroyVideo,
+  getUsers,
+  getOneUser,
+  editUser,
+  addUser,
+  destroyUser,
 };
