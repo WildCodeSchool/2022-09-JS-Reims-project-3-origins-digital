@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
-import SearchBar from "./SearchBar";
 import "./NavBar.css";
 
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
-  const [search, setSearch] = useState(false);
 
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu);
@@ -45,16 +44,9 @@ export default function NavBar() {
         alt="Origins Digital Logo"
         src="./src/assets/OriginsLogo.png"
       />
-      {search === false && (
-        <button
-          type="submit"
-          className="search"
-          onClick={() => setSearch(!search)}
-        >
-          <BiSearchAlt className="searchIcon" />
-        </button>
-      )}
-      {search === true && <SearchBar />}
+      <Link to="search">
+        <BiSearchAlt className="searchIcon" />
+      </Link>
     </nav>
   );
 }

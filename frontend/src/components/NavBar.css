@@ -57,11 +57,13 @@
     background: none;
     border: none;
   }
+
   .searchIcon {
     height: 1.5rem;
     width: 1.5rem;
     color: #f0f0f0;
   }
+
   .nav-bar {
     display: flex;
     justify-content: space-between;
