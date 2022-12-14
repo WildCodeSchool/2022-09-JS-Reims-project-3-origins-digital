@@ -13,10 +13,10 @@ INSERT INTO user (firstname, lastname, username, email, password) VALUES
 CREATE TABLE video (
   id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   title VARCHAR(100) NOT NULL,
-  description VARCHAR(300) NOT NULL,
+  description_video VARCHAR(300) NOT NULL,
   publication_date date NOT NULL,
   thumbnail VARCHAR(100) NOT NULL
 )engine=InnoDB default charset=latin1;
 
-INSERT INTO video (title, description, publication_date, thumbnail) VALUES
+INSERT INTO video (title, description_video, publication_date, thumbnail) VALUES
 ('lorem ipsum', 'lorem ipsum', '2022-12-06', 'lorem ipsum');
