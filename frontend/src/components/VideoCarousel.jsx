@@ -1,5 +1,6 @@
 import "./VideoCarousel.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function VideoCarousel({ title, videos }) {
   return (
@@ -8,11 +9,15 @@ export default function VideoCarousel({ title, videos }) {
       <div className="scroll">
         {videos.map((video) => (
           <figure key={video.id}>
-            <img
-              src={video.thumbnail}
-              alt={video.title}
-              className="thumbnail"
-            />
+            <div>
+              <Link to="/video">
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="thumbnail"
+                />
+              </Link>
+            </div>
             <figcaption>{video.title}</figcaption>
           </figure>
         ))}
