@@ -18,6 +18,18 @@ class UserManager extends AbstractManager {
     );
   }
 
+  findAll() {
+    return this.connection.query(
+      `select firstname, lastname, username, email from  ${this.table}`
+    );
+  }
+  find(id) {
+    return this.connection.query(
+      `select firstname, lastname, username, email from  ${this.table} where id = ?`,
+      [id]
+    );
+  }
+
   update(user) {
     return this.connection.query(
       `update ${this.table} set firstname = ?, lastname = ?, username = ?, email = ?, hashedPassword = ? where id = ?`,
