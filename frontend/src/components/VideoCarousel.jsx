@@ -10,7 +10,7 @@ export default function VideoCarousel({ title, videos }) {
         {videos.map((video) => (
           <figure key={video.id}>
             <div>
-              <Link to="/video">
+              <Link to={`/videos/${video.id}`}>
                 <img
                   src={video.thumbnail}
                   alt={video.title}
