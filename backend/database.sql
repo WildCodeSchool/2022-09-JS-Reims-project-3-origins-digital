@@ -6,7 +6,6 @@ CREATE TABLE role (
 INSERT INTO role (role_name) VALUES
 ('Admin'),('Subscriber'),('Free');
 
-
 CREATE TABLE user (
   id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   firstname VARCHAR(100) NOT NULL,
@@ -45,6 +44,3 @@ CREATE TABLE video (
 
 INSERT INTO video (title, description_video, publication_date, thumbnail, category_id) VALUES
 ('lorem ipsum', 'lorem ipsum', '2022-12-06', 'lorem ipsum', 1);
-
-
-
