@@ -1,13 +1,33 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Open";
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .thumbnail {
-  width: 12rem;
+  width: 15rem;
   height: auto;
 }
 .scroll {
   scroll-snap-type: x;
   overflow-x: scroll;
   display: flex;
+  align-items: center;
   color: white;
 }
+
 h1 {
   color: white;
+}
+figcaption {
+  text-align: center;
+  font-family: "Open";
 }

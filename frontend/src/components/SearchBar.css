@@ -1,0 +1,12 @@
+.return_button {
+  color: #f0f0f0;
+}
+
+.SearchBar {
+  display: flex;
+  align-items: center;
+}
+
+#site-search {
+  width: 100%;
+}

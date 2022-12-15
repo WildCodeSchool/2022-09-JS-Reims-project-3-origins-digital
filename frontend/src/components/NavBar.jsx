@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { BiSearchAlt } from "react-icons/bi";
 import "./NavBar.css";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
@@ -44,6 +46,14 @@ export default function NavBar() {
           <li className="items">LÉGENDE</li>
         </ul>
       )}
+      <img
+        className="logo"
+        alt="Origins Digital Logo"
+        src="./src/assets/OriginsLogo.png"
+      />
+      <Link to="search">
+        <BiSearchAlt className="searchIcon" />
+      </Link>
     </nav>
   );
 }
