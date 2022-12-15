@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { BiSearchAlt } from "react-icons/bi";
 import "./NavBar.css";
 
 export default function NavBar() {
@@ -26,7 +28,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav>
+    <nav className="nav-bar">
       <button type="button" onClick={toggleNavSmallScreen} className="btn">
         Menu
       </button>
@@ -37,6 +39,14 @@ export default function NavBar() {
           <li className="items">LÉGENDE</li>
         </ul>
       )}
+      <img
+        className="logo"
+        alt="Origins Digital Logo"
+        src="./src/assets/OriginsLogo.png"
+      />
+      <Link to="search">
+        <BiSearchAlt className="searchIcon" />
+      </Link>
     </nav>
   );
 }
