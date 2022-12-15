@@ -28,12 +28,11 @@ export default function NavBar() {
 
   return (
     <nav>
-      {toggleMenu === false && (
+      {toggleMenu === false ? (
         <button type="button" onClick={toggleNavSmallScreen} className="btn">
           <RxHamburgerMenu className="menuIcon" />
         </button>
-      )}
-      {toggleMenu === true && (
+      ) : (
         <button type="button" onClick={toggleNavSmallScreen} className="btn">
           <RxCross1 className="menuIcon" />
         </button>
