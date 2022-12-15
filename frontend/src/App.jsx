@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import SearchBar from "./components/SearchBar";
 
 import "./App.css";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="search" element={<SearchBar />} />
           <Route path="/videos/:id" element={<VideoPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </Router>

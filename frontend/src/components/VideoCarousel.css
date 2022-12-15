@@ -11,10 +11,13 @@
 body {
   font-family: "Roboto", sans-serif;
 }
-
+.section-video {
+  margin: 1rem;
+}
 .thumbnail {
   width: 15rem;
   height: auto;
+  margin: 0.5rem;
 }
 .scroll {
   scroll-snap-type: x;
