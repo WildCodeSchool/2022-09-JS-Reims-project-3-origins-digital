@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
 import "./NavBar.css";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -28,10 +29,16 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className="nav-bar">
-      <button type="button" onClick={toggleNavSmallScreen} className="btn">
-        Menu
-      </button>
+    <nav>
+      {toggleMenu === false ? (
+        <button type="button" onClick={toggleNavSmallScreen} className="btn">
+          <RxHamburgerMenu className="menuIcon" />
+        </button>
+      ) : (
+        <button type="button" onClick={toggleNavSmallScreen} className="btn">
+          <RxCross1 className="menuIcon" />
+        </button>
+      )}
       {(toggleMenu || width > 500) && (
         <ul className="liste">
           <li className="items">ÉQUIPE PREMIÈRE</li>
