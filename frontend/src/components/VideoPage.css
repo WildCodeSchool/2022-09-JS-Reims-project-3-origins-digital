@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Open Sans Light";
+    src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
 .FaLessThan {
     color: white;
 }
@@ -12,12 +22,37 @@
     font-family: "Open Sans Light";
 }
 
-.subtitle {
-    color: #807f7f;
+.informations {
+    color: #ff6207;
     font-family: "Gilroy";
 }
 
-.informations {
+.category {
+    color: white;
+    font-family: "Open Sans Light";
+}
+
+.validite {
+    color: #ff6207;
+    font-family: "Gilroy";
+}
+
+.validateInfosStart {
+    color: white;
+    font-family: "Open Sans Light";
+}
+
+.validateInfosEnd {
+    color: white;
+    font-family: "Open Sans Light";
+}
+
+.subtitle {
+    color: #ff6207;
+    font-family: "Gilroy";
+}
+
+.subtitleInfos {
     color: white;
     font-family: "Open Sans Light";
 }
