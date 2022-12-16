@@ -2,7 +2,6 @@ import "./VideoPage.css";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaLessThan } from "react-icons/fa";
-import NavBar from "./NavBar";
 
 export default function VideoPage() {
   const { id } = useParams();
@@ -13,7 +12,6 @@ export default function VideoPage() {
       <Link to="/">
         <FaLessThan />
       </Link>
-      <NavBar />
       <div className="video-informations">
         <iframe
           width="360"
@@ -26,12 +24,14 @@ export default function VideoPage() {
         />
         <h1 className="titlevideo">{/* title */}</h1>
         <h3 className="description">{/* description */}</h3>
-        <h2 className="subtitle"> INFORMATIONS</h2>
-        <h3 className="informations"> Catégorie :{/* category */}</h3>
+        <h2 className="informations"> INFORMATIONS</h2>
+        <h3 className="category"> Catégorie : FootBall</h3>
 
-        <h2 className="subtitle"> VALIDITE</h2>
-
+        <h2 className="validite"> VALIDITE : </h2>
+        <h3 className="validateInfosStart">Publié : le 16 décembre 2022</h3>
+        <h3 className="validateInfosEnd">Expire : le 16 janvier 2023</h3>
         <h2 className="subtitle"> LANGUES</h2>
+        <h3 className="subtitleInfos">French, English, Spanish</h3>
       </div>
     </div>
   );
