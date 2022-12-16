@@ -7,11 +7,13 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState("password");
   return (
     <div className="wrapper">
-      <img
-        src="./src/assets/OriginsLogo.png"
-        alt="OriginsLogo"
-        className="logo_origins"
-      />
+      <Link to="/" className="Logo_content">
+        <img
+          src="./src/assets/OriginsLogo.png"
+          alt="OriginsLogo"
+          className="logo_origins"
+        />
+      </Link>
       <img
         src="./src/assets/login_image.png"
         alt="user"
