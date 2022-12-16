@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function VideoCarousel({ title, videos }) {
   return (
-    <section>
+    <section className="section-video">
       <h1>{title}</h1>
       <div className="scroll">
         {videos.map((video) => (

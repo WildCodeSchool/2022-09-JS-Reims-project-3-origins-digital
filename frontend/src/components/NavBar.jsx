@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
 import "./NavBar.css";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
@@ -29,7 +30,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav>
+    <nav className="nav-bar">
       {toggleMenu === false ? (
         <button type="button" onClick={toggleNavSmallScreen} className="btn">
           <RxHamburgerMenu className="menuIcon" />
@@ -51,6 +52,9 @@ export default function NavBar() {
         alt="Origins Digital Logo"
         src="./src/assets/OriginsLogo.png"
       />
+      <Link to="/login">
+        <CgProfile className="profile" />
+      </Link>
       <Link to="search">
         <BiSearchAlt className="searchIcon" />
       </Link>
