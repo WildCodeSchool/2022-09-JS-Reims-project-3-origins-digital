@@ -1,11 +1,17 @@
 const express = require("express");
-const { hashPassword } = require("./auth");
+const { hashPassword, verifyPassword, verifyToken } = require("./auth");
 
 const router = express.Router();
 
 const itemControllers = require("./controllers/itemControllers");
 const videoControllers = require("./controllers/videoControllers");
 const userControllers = require("./controllers/userControllers");
+
+router.post(
+  "/login",
+  userControllers.getUserByEmailWithPasswordAndPassToNext,
+  verifyPassword
+);
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -19,7 +25,7 @@ router.put("/videos/:id", videoControllers.editVideo);
 router.post("/videos", videoControllers.addVideo);
 router.delete("/videos/:id", videoControllers.destroyVideo);
 
-router.get("/users", userControllers.getUsers);
+router.get("/users", verifyToken, userControllers.getUsers);
 router.get("/users/:id", userControllers.getOneUser);
 router.put("/users/:id", hashPassword, userControllers.editUser);
 router.post("/users", hashPassword, userControllers.addUser);
