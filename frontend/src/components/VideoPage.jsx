@@ -10,11 +10,11 @@ export default function VideoPage() {
   return (
     <div>
       <Link to="/">
-        <FaLessThan />
+        <FaLessThan className="return-button" />
       </Link>
-      <div className="video-informations">
+      <div className="video">
         <iframe
-          width="360"
+          width="428"
           height="250"
           src="https://www.youtube.com/embed/mBiE_g074_Q"
           title="YouTube video player"
@@ -22,16 +22,31 @@ export default function VideoPage() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-        <h1 className="titlevideo">{/* title */}</h1>
-        <h3 className="description">{/* description */}</h3>
-        <h2 className="informations"> INFORMATIONS</h2>
-        <h3 className="category"> Catégorie : FootBall</h3>
-
-        <h2 className="validite"> VALIDITE : </h2>
-        <h3 className="validateInfosStart">Publié : le 16 décembre 2022</h3>
-        <h3 className="validateInfosEnd">Expire : le 16 janvier 2023</h3>
-        <h2 className="subtitle"> LANGUES</h2>
-        <h3 className="subtitleInfos">French, English, Spanish</h3>
+        <div className="video-informations">
+          <h1 className="titlevideo">
+            Griezmann ATTEND Messi et l’Argentine après le succès contre le
+            Maroc !
+          </h1>
+          <h3 className="description">
+            Les Bleus sont en finale de la Coupe du monde après le succès face
+            au Maroc, Griezmann promet de tout faire face à Messi, les
+            célébrations en mode Matuidi Charo dans le vestiaire : la
+            Quotidienne du jour est disponible !
+          </h3>
+          <div className="hashtag">
+            <p className="hash">#Football</p>
+            <p className="hash">#Mondial</p>
+            <p className="hash">#Griezmann</p>
+          </div>
+          <hr />
+          <h2 className="informations"> INFORMATIONS</h2>
+          <h3 className="category"> Catégorie : FootBall</h3>
+          <h2 className="validite"> VALIDITE : </h2>
+          <h3 className="validateInfosStart">Publié : le 16 décembre 2022</h3>
+          <h3 className="validateInfosEnd"> </h3>
+          <h2 className="subtitle"> LANGUES</h2>
+          <h3 className="subtitleInfos">French, English, Spanish</h3>
+        </div>
       </div>
     </div>
   );
