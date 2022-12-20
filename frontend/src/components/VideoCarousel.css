@@ -1,17 +1,15 @@
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
 
 @font-face {
-  font-family: "Open";
+  font-family: "Open Sans Light";
   src: url("../fonts/OpenSans-Light.ttf") format("truetype");
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-}
 .section-video {
+  padding-top: 3rem;
   margin: 1rem;
 }
 .thumbnail {
@@ -27,10 +25,25 @@ body {
   color: white;
 }
 
+.title-video-thumbnail {
+  color: #94b1d4;
+  font-family: "Open Sans Light";
+  font-weight: 1;
+  font-size: 1.2rem;
+}
+
 h1 {
   color: white;
+  font-family: "Gilroy";
 }
+
 figcaption {
   text-align: center;
   font-family: "Open";
+}
+
+hr {
+  margin-top: 2rem;
+  border: 1px solid #94b1d4;
+  border-radius: 30%;
 }

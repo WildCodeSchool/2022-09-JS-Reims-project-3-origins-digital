@@ -18,10 +18,13 @@ export default function VideoCarousel({ title, videos }) {
                 />
               </Link>
             </div>
-            <figcaption>{video.title}</figcaption>
+            <figcaption className="title-video-thumbnail">
+              {video.title}
+            </figcaption>
           </figure>
         ))}
       </div>
+      <hr />
     </section>
   );
 }

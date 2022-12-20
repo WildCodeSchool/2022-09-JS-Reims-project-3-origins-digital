@@ -13,15 +13,16 @@ export default function VideoPage() {
         <FaLessThan className="return-button" />
       </Link>
       <div className="video">
-        <iframe
-          width="428"
-          height="250"
-          src="https://www.youtube.com/embed/mBiE_g074_Q"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+        <div className="video-player">
+          <iframe
+            className="responsive-video"
+            src="https://www.youtube.com/embed/mBiE_g074_Q"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
         <div className="video-informations">
           <h1 className="titlevideo">
             Griezmann ATTEND Messi et l’Argentine après le succès contre le
@@ -38,7 +39,7 @@ export default function VideoPage() {
             <p className="hash">#Mondial</p>
             <p className="hash">#Griezmann</p>
           </div>
-          <hr />
+          <hr className="barre" />
           <h2 className="informations"> INFORMATIONS</h2>
           <h3 className="category"> Catégorie : FootBall</h3>
           <h2 className="validite"> VALIDITE : </h2>

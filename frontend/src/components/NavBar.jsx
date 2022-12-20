@@ -52,12 +52,14 @@ export default function NavBar() {
         alt="Origins Digital Logo"
         src="./src/assets/OriginsLogo.png"
       />
-      <Link to="/login">
-        <CgProfile className="profile" />
-      </Link>
-      <Link to="search">
-        <BiSearchAlt className="searchIcon" />
-      </Link>
+      <div className="button-right">
+        <Link to="/login">
+          <CgProfile className="profile" />
+        </Link>
+        <Link to="search">
+          <BiSearchAlt className="searchIcon" />
+        </Link>
+      </div>
     </nav>
   );
 }

@@ -12,6 +12,29 @@
   height: 1.5rem;
   width: 1.5rem;
   color: #f0f0f0;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.return-button:hover {
+  color: #ff680a;
+}
+
+.video-player {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.responsive-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .video {
@@ -36,7 +59,7 @@
 }
 
 .description {
-  color: #414f5f;
+  color: #94b1d4;
   font-family: "Open Sans Light";
   font-weight: 1;
   font-size: 1rem;
@@ -53,7 +76,7 @@
   color: #ff680a;
 }
 
-p {
+.hash {
   font-family: "Gilroy";
   font-size: 0.8rem;
   font-weight: bold;
@@ -73,7 +96,7 @@ p {
 }
 
 .category {
-  color: #414f5f;
+  color: #94b1d4;
   font-family: "Open Sans Light";
   font-weight: 1;
   font-size: 1rem;
@@ -89,7 +112,7 @@ p {
 }
 
 .validateInfosStart {
-  color: #414f5f;
+  color: #94b1d4;
   font-family: "Open Sans Light";
   font-weight: 1;
   font-size: 1rem;
@@ -112,8 +135,13 @@ p {
 }
 
 .subtitleInfos {
-  color: #414f5f;
+  color: #94b1d4;
   font-family: "Open Sans Light";
   font-weight: 1;
   font-size: 1rem;
+}
+
+.barre {
+  border: 1px solid #94b1d4;
+  border-radius: 30%;
 }
