@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import NavBar from "../components/NavBar";
 import ImageCarousel from "../components/ImageCarousel";
-import "./Home.css";
 
 import VideosByCategory from "../components/VideosByCategory";
 

@@ -1,98 +1,109 @@
 @font-face {
-    font-family: "Gilroy";
-    src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .liste {
-    font-family: "Gilroy";
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+  font-family: "Gilroy";
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
 }
 
 .items {
-    margin-right: 10px;
-    color: #f1f1f1;
-    cursor: pointer;
-    padding-left: 10px;
-    padding-right: 10px;
+  margin-right: 10px;
+  color: #f1f1f1;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .btn {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 500px) {
-    .liste {
-        flex-direction: column;
-        height: 9.9rem;
-        display: flex;
-        justify-content: center;
-        left: 1.4rem;
-        margin-top: 13rem;
-    }
+  .liste {
+    flex-direction: column;
+    height: 9.9rem;
+    display: flex;
+    justify-content: center;
+    left: 1.4rem;
+    margin-top: 13rem;
+  }
 
-    .items {
-        height: 50px;
-        width: 100%;
-        border-bottom: 1px solid #fff;
-        line-height: 50px;
-        z-index: 100;
-        background-color: #010d18;
-    }
+  .items {
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    line-height: 50px;
+    z-index: 100;
+    background-color: #010d18;
+  }
 
-    .btn {
-        display: block;
-        right: 10px;
-        top: 10px;
-        color: #333;
-        cursor: pointer;
-        background: none;
-        border: none;
-    }
+  .btn {
+    display: block;
+    right: 10px;
+    top: 10px;
+    padding-left: 5px;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
 
-    .menuIcon {
-        height: 1.8rem;
-        width: 1.8rem;
-        color: #f0f0f0;
-    }
+  .menuIcon {
+    height: 1.8rem;
+    width: 1.8rem;
+    color: #f0f0f0;
+  }
 
-    .search {
-        height: 2rem;
-        width: 2rem;
-        background: none;
-        border: none;
-    }
+  .button-right {
+    display: flex;
+    padding-right: 5px;
+    gap: 0.8rem;
+  }
 
-    .profile {
-        height: 1.8rem;
-        width: 1.8rem;
-        color: #f0f0f0;
-        margin-left: 4rem;
-    }
+  .search {
+    height: 2rem;
+    width: 2rem;
+    background: none;
+    border: none;
+  }
 
-    .searchIcon {
-        height: 1.8rem;
-        width: 1.8rem;
-        color: #f0f0f0;
-    }
+  .profile {
+    height: 2rem;
+    width: 2rem;
+    color: #f0f0f0;
+  }
 
-    .nav-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 3.5rem;
-    }
+  .searchIcon {
+    height: 2rem;
+    width: 2rem;
+    color: #f0f0f0;
+  }
 
-    .logo {
-        width: 35%;
-        margin-left: 5rem;
-    }
+  .searchIcon:hover,
+  .profile:hover {
+    color: #ff680a;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+  }
+
+  .logo {
+    width: 35%;
+    margin-left: 2rem;
+  }
 }

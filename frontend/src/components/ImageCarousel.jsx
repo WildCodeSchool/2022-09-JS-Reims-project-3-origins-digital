@@ -10,7 +10,9 @@ import { Pagination } from "swiper";
 export default function ImageCarousel() {
   return (
     <Swiper pagination modules={[Pagination]} className="mySwiper">
-      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>
+        <img alt="qatar" src="./src/assets/qatar.png" />
+      </SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
       <SwiperSlide>Slide 4</SwiperSlide>
