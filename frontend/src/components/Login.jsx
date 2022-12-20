@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState("password");
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const handleSubmit = () => {
+    const dataPost = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataPost),
+    }).then((res) => {
+      console.warn(res);
+      navigate("/");
+    });
+  };
   return (
     <div className="wrapper">
       <Link to="/" className="Logo_content">
@@ -19,41 +39,51 @@ export default function Login() {
         alt="user"
         className="logo_connect"
       />
-      <div>
-        <input
-          type="text"
-          className="username"
-          name="username"
-          placeholder="Pseudo"
-        />
-      </div>
-      <div className="password_box">
-        {showPassword === "password" ? (
-          <AiFillEye
-            className="icon"
-            onClick={() => {
-              setShowPassword("text");
-            }}
+      <form
+        className="form_login"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+      >
+        <div>
+          <input
+            type="email"
+            className="username"
+            name="email"
+            placeholder="Email"
+            ref={emailRef}
           />
-        ) : (
-          <AiFillEyeInvisible
-            className="icon"
-            onClick={() => {
-              setShowPassword("password");
-            }}
+        </div>
+        <div className="password_box">
+          {showPassword === "password" ? (
+            <AiFillEye
+              className="icon"
+              onClick={() => {
+                setShowPassword("text");
+              }}
+            />
+          ) : (
+            <AiFillEyeInvisible
+              className="icon"
+              onClick={() => {
+                setShowPassword("password");
+              }}
+            />
+          )}
+          <input
+            type={showPassword}
+            className="password"
+            name="password"
+            minLength="8"
+            required
+            placeholder="Mot de passe"
+            ref={passwordRef}
           />
-        )}
-        <input
-          type={showPassword}
-          className="password"
-          name="password"
-          minLength="8"
-          required
-          placeholder="Mot de passe"
-        />
-      </div>
+        </div>
 
-      <input type="submit" value="Connexion" className="sign_in" />
+        <input type="submit" value="Connexion" className="sign_in" />
+      </form>
       <Link to="/register">
         <p>Créer un compte</p>
       </Link>
