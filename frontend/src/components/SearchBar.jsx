@@ -11,33 +11,47 @@ export default function SearchBar() {
   function handleSubmit(event) {
     event.preventDefault();
   }
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/videos", {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((data) => console.warn(data))
+      .then((data) => {
+        setMovies(data);
+      })
       .catch((err) => {
         console.warn(err);
       });
   }, []);
 
   return (
-    <div className="SearchBar">
-      <Link to="/">
-        <FaLessThan className="return_button" />
-      </Link>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          id="site-search"
-          placeholder="Rechercher une vidéo"
-          onChange={handleChange}
-          value={searchInput}
-        />
-        <button type="submit">Rechercher</button>
-      </form>
-    </div>
+    <>
+      <div className="SearchBar">
+        <Link to="/">
+          <FaLessThan className="return_button" />
+        </Link>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            id="site-search"
+            placeholder="Rechercher une vidéo"
+            onChange={handleChange}
+            value={searchInput}
+          />
+          <button type="submit">Rechercher</button>
+        </form>
+      </div>
+      <div className="results">
+        {movies.map((value) => {
+          return (
+            <a className="movieItem" href={value.link} key={value.id}>
+              <p>{value.title}</p>
+            </a>
+          );
+        })}
+      </div>
+    </>
   );
 }

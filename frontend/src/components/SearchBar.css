@@ -10,3 +10,7 @@
 #site-search {
   width: 100%;
 }
+
+.results a{
+  color:#f0f0f0;
+}
