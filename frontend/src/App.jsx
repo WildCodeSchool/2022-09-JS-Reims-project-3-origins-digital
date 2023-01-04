@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import VideoPage from "./components/VideoPage";
 import Home from "./pages/Home";
 import SearchBar from "./components/SearchBar";
+import AdminPanel from "./components/AdminPanel";
 
 import "./App.css";
 import Login from "./components/Login";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/videos/:id" element={<VideoPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<AdminPanel />} />
         </Routes>
       </div>
     </Router>
