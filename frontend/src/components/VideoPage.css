@@ -52,7 +52,7 @@
 
 .titlevideo {
   color: white;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 1;
   font-size: 1.5rem;
   padding-bottom: 1rem;
@@ -60,7 +60,7 @@
 
 .description {
   color: #94b1d4;
-  font-family: "Open Sans Light";
+  font-family: "Open Sans Light", sans-serif;
   font-weight: 1;
   font-size: 1rem;
   padding-bottom: 3rem;
@@ -73,11 +73,7 @@
 }
 
 .hash {
-  color: #ff680a;
-}
-
-.hash {
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
   border: 1px solid #ff680a;
@@ -88,7 +84,7 @@
 
 .informations {
   color: white;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 1;
   font-size: 1rem;
   padding-bottom: 0.3rem;
@@ -97,7 +93,7 @@
 
 .category {
   color: #94b1d4;
-  font-family: "Open Sans Light";
+  font-family: "Open Sans Light", sans-serif;
   font-weight: 1;
   font-size: 1rem;
   padding-bottom: 1.5rem;
@@ -105,7 +101,7 @@
 
 .validite {
   color: white;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 1;
   font-size: 1rem;
   padding-bottom: 0.3rem;
@@ -113,14 +109,14 @@
 
 .validateInfosStart {
   color: #94b1d4;
-  font-family: "Open Sans Light";
+  font-family: "Open Sans Light", sans-serif;
   font-weight: 1;
   font-size: 1rem;
 }
 
 .validateInfosEnd {
   color: white;
-  font-family: "Open Sans Light";
+  font-family: "Open Sans Light", sans-serif;
   font-weight: 1;
   font-size: 1rem;
   padding-bottom: 1.5rem;
@@ -128,7 +124,7 @@
 
 .subtitle {
   color: white;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 1;
   font-size: 1rem;
   padding-bottom: 0.3rem;
@@ -136,7 +132,7 @@
 
 .subtitleInfos {
   color: #94b1d4;
-  font-family: "Open Sans Light";
+  font-family: "Open Sans Light", sans-serif;
   font-weight: 1;
   font-size: 1rem;
 }
