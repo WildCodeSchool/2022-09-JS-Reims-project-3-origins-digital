@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { useState, useRef } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -6,6 +7,8 @@ import "./Login.css";
 export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState("password");
+  const [token, setToken] = useState(null);
+  const [errorInput, setErrorInput] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -20,10 +23,17 @@ export default function Login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(dataPost),
-    }).then((res) => {
-      console.warn(res);
-      navigate("/");
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.token) {
+          setToken(data.token);
+          navigate("/");
+        }
+      });
+    if (!token) {
+      setErrorInput(true);
+    }
   };
   return (
     <div className="wrapper">
@@ -83,6 +93,7 @@ export default function Login() {
         </div>
 
         <input type="submit" value="Connexion" className="sign_in" />
+        {errorInput && <p className="error">Email ou mot de passe incorrect</p>}
       </form>
       <Link to="/register">
         <p>Créer un compte</p>
