@@ -7,7 +7,6 @@ import "./Login.css";
 export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState("password");
-  const [token, setToken] = useState(null);
   const [errorInput, setErrorInput] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -27,13 +26,13 @@ export default function Login() {
       .then((response) => response.json())
       .then((data) => {
         if (data.token) {
-          setToken(data.token);
           navigate("/");
         }
+      })
+      .catch((err) => {
+        console.error(err);
+        setErrorInput(true);
       });
-    if (!token) {
-      setErrorInput(true);
-    }
   };
   return (
     <div className="wrapper">
