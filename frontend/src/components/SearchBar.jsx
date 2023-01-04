@@ -5,9 +5,7 @@ import "./SearchBar.css";
 
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState("");
-  function handleChange(event) {
-    setSearchInput(event.target.value);
-  }
+
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -25,33 +23,48 @@ export default function SearchBar() {
         console.warn(err);
       });
   }, []);
+  const [filteredMovies, setFilteredMovies] = useState([]);
 
+  function handleChange(event) {
+    setSearchInput(event.target.value);
+    const searchWord = event.target.value;
+    const newFilter = movies.filter((value) => {
+      return value.title.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    if (searchWord === "") {
+      setFilteredMovies([]);
+    } else {
+      setFilteredMovies(newFilter);
+    }
+  }
   return (
     <>
       <div className="SearchBar">
         <Link to="/">
           <FaLessThan className="return_button" />
         </Link>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            id="site-search"
-            placeholder="Rechercher une vidéo"
-            onChange={handleChange}
-            value={searchInput}
-          />
-          <button type="submit">Rechercher</button>
-        </form>
+        <input
+          type="search"
+          id="site-search"
+          placeholder="Rechercher une vidéo"
+          onChange={handleChange}
+          value={searchInput}
+        />
+        <button className="searchBtn" type="submit" onSubmit={handleSubmit}>
+          Rechercher
+        </button>
       </div>
-      <div className="results">
-        {movies.map((value) => {
-          return (
-            <a className="movieItem" href={value.link} key={value.id}>
-              <p>{value.title}</p>
-            </a>
-          );
-        })}
-      </div>
+      {filteredMovies.length !== 0 && (
+        <div className="results">
+          {filteredMovies.map((value) => {
+            return (
+              <a className="resultItem" href={value.link} key={value.id}>
+                <p>{value.title}</p>
+              </a>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }
