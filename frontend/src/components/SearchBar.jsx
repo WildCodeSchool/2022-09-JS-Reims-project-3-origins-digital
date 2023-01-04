@@ -1,5 +1,5 @@
 import { FaLessThan } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./SearchBar.css";
 
@@ -10,6 +10,9 @@ export default function SearchBar() {
   }
   function handleSubmit(event) {
     event.preventDefault();
+  }
+
+  useEffect(() => {
     fetch("http://localhost:5000/videos", {
       method: "GET",
     })
@@ -18,7 +21,7 @@ export default function SearchBar() {
       .catch((err) => {
         console.warn(err);
       });
-  }
+  }, []);
 
   return (
     <div className="SearchBar">
