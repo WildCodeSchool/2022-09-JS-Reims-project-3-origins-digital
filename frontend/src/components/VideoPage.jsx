@@ -1,54 +1,62 @@
 import "./VideoPage.css";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaLessThan } from "react-icons/fa";
+import CurrentVideoContext from "../contexts/currentVideo";
+import CurrentCategoryContext from "../contexts/currentCategory";
 
 export default function VideoPage() {
   const { id } = useParams();
-  console.warn(id);
+  const videos = useContext(CurrentVideoContext);
+  const video = videos.find(
+    (possibleVideo) => possibleVideo.id === parseInt(id, 10)
+  );
+  const category = useContext(CurrentCategoryContext);
+  const categoryVideo = category.find(
+    (possibleCategory) => possibleCategory.id === video.category_id
+  );
 
   return (
-    <div>
-      <Link to="/">
-        <FaLessThan className="return-button" />
-      </Link>
-      <div className="video">
-        <div className="video-player">
-          <iframe
-            className="responsive-video"
-            src="https://www.youtube.com/embed/mBiE_g074_Q"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-        <div className="video-informations">
-          <h1 className="titlevideo">
-            Griezmann ATTEND Messi et l’Argentine après le succès contre le
-            Maroc !
-          </h1>
-          <h3 className="description">
-            Les Bleus sont en finale de la Coupe du monde après le succès face
-            au Maroc, Griezmann promet de tout faire face à Messi, les
-            célébrations en mode Matuidi Charo dans le vestiaire : la
-            Quotidienne du jour est disponible !
-          </h3>
-          <div className="hashtag">
-            <p className="hash">#Football</p>
-            <p className="hash">#Mondial</p>
-            <p className="hash">#Griezmann</p>
+    video && (
+      <div>
+        <Link to="/">
+          <FaLessThan className="return-button" />
+        </Link>
+        <div className="video">
+          <div className="video-player">
+            <iframe
+              className="responsive-video"
+              src={video.link}
+              title={video.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
-          <hr className="barre" />
-          <h2 className="informations"> INFORMATIONS</h2>
-          <h3 className="category"> Catégorie : FootBall</h3>
-          <h2 className="validite"> VALIDITE : </h2>
-          <h3 className="validateInfosStart">Publié : le 16 décembre 2022</h3>
-          <h3 className="validateInfosEnd"> </h3>
-          <h2 className="subtitle"> LANGUES</h2>
-          <h3 className="subtitleInfos">French, English, Spanish</h3>
+          <div className="video-informations">
+            <h1 className="titlevideo">{video.title}</h1>
+            <h3 className="description">{video.description_video}</h3>
+            <div className="hashtag">
+              <p className="hash">#Football</p>
+              <p className="hash">#Mondial</p>
+              <p className="hash">#Griezmann</p>
+            </div>
+            <hr className="barre" />
+            <h2 className="informations"> INFORMATIONS</h2>
+            <h3 className="category">
+              {" "}
+              Catégorie : {categoryVideo.category_name}
+            </h3>
+            <h2 className="validite"> VALIDITE : </h2>
+            <h3 className="validateInfosStart">
+              Publié : {video.publication_date}
+            </h3>
+            <h3 className="validateInfosEnd"> </h3>
+            <h2 className="subtitle"> LANGUES</h2>
+            <h3 className="subtitleInfos">French, English, Spanish</h3>
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 }
