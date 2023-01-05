@@ -1,6 +1,7 @@
 import { FaLessThan } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
 import "./SearchBar.css";
 
 export default function SearchBar() {
@@ -46,6 +47,7 @@ export default function SearchBar() {
   }
   return (
     <>
+      <NavBar />
       <div className="SearchBar">
         <Link to="/">
           <FaLessThan className="return_button" />
