@@ -8,6 +8,10 @@
   font-family: "Gilroy", sans-serif;
 }
 
+.back {
+  margin-bottom: 10px;
+}
+
 .border-header {
   margin-left: 1rem;
   padding-left: 10px;
