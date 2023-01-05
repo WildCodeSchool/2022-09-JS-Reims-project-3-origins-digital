@@ -27,10 +27,17 @@ export default function SearchBar() {
 
   function handleChange(event) {
     setSearchInput(event.target.value);
-    const searchWord = event.target.value;
+    let searchWord = event.target.value.toLocaleLowerCase("fr-FR");
+    searchWord = searchWord.normalize("NFD").replace(/\p{Diacritic}/gu, "");
+
     const newFilter = movies.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase());
+      const normalizeTitle = value.title
+        .toLocaleLowerCase("fr-FR")
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "");
+      return normalizeTitle.includes(searchWord);
     });
+
     if (searchWord === "") {
       setFilteredMovies([]);
     } else {
