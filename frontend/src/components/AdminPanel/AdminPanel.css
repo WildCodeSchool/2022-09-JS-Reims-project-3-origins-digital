@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
+  src: url("../../fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
 
 * {
@@ -56,6 +56,10 @@
 .category-menu {
   padding-left: 20px;
   color: #94b1d4;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 1.5rem;
 }
 
 .border-category2 {
