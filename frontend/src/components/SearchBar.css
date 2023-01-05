@@ -12,6 +12,8 @@
   width: 100%;
   height: 2rem;
   border-radius: 0.7rem;
+  color:black;
+  padding: 0.2rem;
 }
 
 .results a{
@@ -22,6 +24,7 @@
 .searchBtn{
   height: 2rem;
   border-radius: 0.7rem;
+  color: black;
 }
 
 .results{
