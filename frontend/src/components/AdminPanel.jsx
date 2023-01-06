@@ -1,12 +1,13 @@
 import React from "react";
 import "./AdminPanel.css";
+import { Link } from "react-router-dom";
 
 export default function AdminPanel() {
   return (
     <div>
-      <a href="/">
+      <Link to="/">
         <p className="back">Retour au site</p>
-      </a>
+      </Link>
       <div className="border-header">
         <h1 className="title">Admin Panel</h1>
       </div>
