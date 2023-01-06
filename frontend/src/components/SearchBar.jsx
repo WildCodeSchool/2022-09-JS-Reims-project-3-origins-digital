@@ -6,25 +6,12 @@ import "./SearchBar.css";
 
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState("");
+  const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
   }
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/videos", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data);
-      })
-      .catch((err) => {
-        console.warn(err);
-      });
-  }, []);
-  const [filteredMovies, setFilteredMovies] = useState([]);
 
   function handleChange(event) {
     setSearchInput(event.target.value);
@@ -45,6 +32,20 @@ export default function SearchBar() {
       setFilteredMovies(newFilter);
     }
   }
+
+  useEffect(() => {
+    fetch("http://localhost:5000/videos", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setMovies(data);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  }, []);
+
   return (
     <>
       <NavBar />
