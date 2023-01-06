@@ -1,15 +1,19 @@
+import { useContext } from "react";
 import VideoCarousel from "./VideoCarousel";
-import videos from "../data/videos";
+import CurrentVideoContext from "../contexts/currentVideo";
+import CurrentCategoryContext from "../contexts/currentCategory";
 
 export default function VideosByCategory() {
-  const categories = ["Football", "Baseball", "BasketBall"];
+  const videos = useContext(CurrentVideoContext);
+  const category = useContext(CurrentCategoryContext);
   return (
     <>
-      {categories.map((category) => (
+      {category.map((categories) => (
         <VideoCarousel
-          title={category}
-          videos={videos.filter((video) => video.category === category)}
-          key={category}
+          title={categories.category_name}
+          videos={videos.filter((video) => video.category_id === categories.id)}
+          key={categories.category_name}
+          category={categories}
         />
       ))}
     </>
