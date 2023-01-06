@@ -61,7 +61,7 @@ export default function NavBar() {
         <Link to="/login">
           <CgProfile className="profile" />
         </Link>
-        <Link to="search">
+        <Link to="/search">
           <BiSearchAlt className="searchIcon" />
         </Link>
       </div>
