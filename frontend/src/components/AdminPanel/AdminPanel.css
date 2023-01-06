@@ -3,7 +3,7 @@
   src: url("../../fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
 
-* {
+body {
   color: white;
   font-family: "Gilroy", sans-serif;
 }
