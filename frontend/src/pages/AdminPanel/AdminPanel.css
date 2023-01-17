@@ -1,11 +1,18 @@
 @font-face {
   font-family: "Gilroy";
-  src: url("../../fonts/Gilroy-ExtraBold.otf") format("truetype");
+  src: url("src/fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
 
 body {
   color: white;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Open Sans Light", sans-serif
+}
+
+.admin-menu {
+  background-color: #333333;
+  border-right: 0.188rem solid white;
+  margin-right: 45rem;
+  height: 100vh;
 }
 
 .back {
@@ -14,16 +21,12 @@ body {
 
 .border-header {
   margin-left: 1rem;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
   height: fit-content;
   width: fit-content;
   display: flex;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .title {
@@ -37,25 +40,20 @@ body {
   width: 15rem;
   display: flex;
   flex-direction: column;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
 }
 
 .border-category1 {
-  padding-left: 10px;
-  padding-right: 10px;
+  color: #94b1d4;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
   height: fit-content;
   width: fit-content;
   display: flex;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
 }
 
 .category-menu {
-  padding-left: 20px;
-  color: #94b1d4;
+  padding-left: 1.25rem;
+  color: #ffffff;
   border: none;
   background: none;
   text-align: left;
@@ -63,13 +61,11 @@ body {
 }
 
 .border-category2 {
-  margin-top: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
+  color: #94b1d4;
+  margin-top: 2.188rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
   height: fit-content;
   width: fit-content;
   display: flex;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
 }

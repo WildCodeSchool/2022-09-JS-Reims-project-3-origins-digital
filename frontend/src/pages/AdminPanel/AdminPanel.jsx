@@ -14,7 +14,7 @@ export default function AdminPanel() {
   const [sectionsUpload, setSectionsUpload] = useState(false);
 
   return (
-    <div>
+    <div className="admin-menu">
       <Link to="/">
         <p className="back">Retour au site</p>
       </Link>
