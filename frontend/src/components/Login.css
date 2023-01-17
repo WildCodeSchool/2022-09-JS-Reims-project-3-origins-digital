@@ -65,3 +65,9 @@
   text-align: center;
   color: red;
 }
+
+@media screen and (min-width: 700px) {
+  .logo_origins {
+    width: 40%;
+  }
+}
