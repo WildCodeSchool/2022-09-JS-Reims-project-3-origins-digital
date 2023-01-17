@@ -20,6 +20,8 @@ router.get("/videos/:id", videoControllers.getOneVideo);
 router.get("/category", categoryControllers.getCategory);
 router.get("/category/:id", categoryControllers.getOneCategory);
 router.post("/users", hashPassword, userControllers.addUser);
+router.get("/category", categoryControllers.getCategory);
+router.get("/category/:id", categoryControllers.getOneCategory);
 router.use(verifyToken);
 
 router.put("/videos/:id", videoControllers.editVideo);

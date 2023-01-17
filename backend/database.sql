@@ -40,25 +40,6 @@ INSERT INTO category (category_name)
 VALUES ('Football'),
 	   ('Basket');
 
-<<<<<<< HEAD
-CREATE TABLE video (
-  id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  title VARCHAR(200) NOT NULL,
-  description_video VARCHAR(500) NOT NULL,
-  publication_date date NOT NULL,
-  link VARCHAR(200) NOT NULL,
-  thumbnail VARCHAR(200) NOT NULL,
-  category_id INT NOT NULL,
-    CONSTRAINT fk_video_category
-      FOREIGN KEY (category_id)
-      REFERENCES category(id)
-)engine=InnoDB default charset=utf8mb4;
-
-INSERT INTO video (title, description_video, publication_date, link, thumbnail,category_id) VALUES
-('NBA - Résumé VF : Golden State Warriors @ Los Angeles Lakers', 'Avec un Stephen Curry en triple-double, son premier depuis 2016 et un Jordan Poole inspiré, les Warriors ont renversé les Lakers malgré les 67 pts du duo James-Davis.', '2021-10-20', 'https://www.youtube.com/watch?v=tSGtWkQ30no', 'https://i.ytimg.com/vi/fmuDBDbYwYE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1LN1SOPKkLmxK_fXR__wI-ljluQ', 2),
-('France 8-0 Kazakhstan, le résumé', 'Face au Kazakhstan, emmenés par un Kylian Mbappé(4 buts) dans son jardin du Parc des Princes, les Bleus de Didier Deschamps ont obtenus leur billet pour le mondial 2022 au Qatar. Ils iront affronter la Finlande, mardi, à Helsinki pour clôturer cette phase de qualification.', '2021-11-15', 'https://www.youtube.com/watch?v=lhhCp7aTXnI', 'https://i.ytimg.com/vi/lhhCp7aTXnI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDG9U0cg9ocdg3T3WnaHGSO2V9Qcw', 1),
-('FULL MATCH: France vs. Croatia', 'A new World Cup Champion will be crowned as France and Croatia take the stage in the Final of the 2018 edition of the tournament.', '2018-10-10', 'https://www.youtube.com/watch?v=SvV6aUki6LU', 'https://i.ytimg.com/an_webp/SvV6aUki6LU/mqdefault_6s.webp?du=3000&sqp=CNKt1p0G&rs=AOn4CLDpVGb5DZM5EHZJhYI6QYc_i7v1KA', 1);
-=======
 CREATE TABLE video
 (
 	id                INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -89,4 +70,3 @@ VALUES ('NBA - Résumé VF : Golden State Warriors @ Los Angeles Lakers',
 		'2018-10-10', 'https://www.youtube.com/watch?v=SvV6aUki6LU',
 		'https://i.ytimg.com/an_webp/SvV6aUki6LU/mqdefault_6s.webp?du=3000&sqp=CNKt1p0G&rs=AOn4CLDpVGb5DZM5EHZJhYI6QYc_i7v1KA',
 		1);
->>>>>>> main
