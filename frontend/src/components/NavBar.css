@@ -9,7 +9,7 @@
 }
 
 .liste {
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   list-style-type: none;
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center;
     left: 1.4rem;
-    margin-top: 13rem;
+    margin-top: 16.5rem;
   }
 
   .items {

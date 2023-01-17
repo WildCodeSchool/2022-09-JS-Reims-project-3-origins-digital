@@ -45,6 +45,11 @@ export default function NavBar() {
           <li className="items">ÉQUIPE PREMIÈRE</li>
           <li className="items">FORMATION</li>
           <li className="items">LÉGENDE</li>
+          <li className="items">
+            <Link style={{ textDecoration: "none" }} to="/admin">
+              ADMIN
+            </Link>
+          </li>
         </ul>
       )}
       <img
@@ -56,7 +61,7 @@ export default function NavBar() {
         <Link to="/login">
           <CgProfile className="profile" />
         </Link>
-        <Link to="search">
+        <Link to="/search">
           <BiSearchAlt className="searchIcon" />
         </Link>
       </div>

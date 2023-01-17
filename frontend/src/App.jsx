@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import SearchBar from "./components/SearchBar";
 import { CurrentVideoContextProvider } from "./contexts/currentVideo";
 import { CurrentCategoryContextProvider } from "./contexts/currentCategory";
-import AdminPanel from "./components/AdminPanel";
+import AdminPanel from "./components/AdminPanel/AdminPanel";
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
