@@ -1,8 +1,8 @@
 .admin-menu {
   background-color: #333333;
   border-right: 0.188rem solid white;
-  margin-right: 80%;
   height: 100vh;
+  width: 20vw;
   font-family: "Open Sans Light", sans-serif
 }
 
