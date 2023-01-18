@@ -1,4 +1,4 @@
-import "./Videos.css";
+import "./VideosModify.css";
 
 export default function VideosModify() {
   return (
