@@ -19,7 +19,9 @@ export default function AdminMenu() {
         <p className="back">Retour au site</p>
       </Link>
       <div className="border-header">
-        <h1 className="title">Admin Panel</h1>
+        <Link style={{ textDecoration: "none" }} to="/admin">
+          <h1 className="title">Admin Panel</h1>
+        </Link>
       </div>
       <div className="border-menu">
         <h2 className="border-category1">Vidéos</h2>
