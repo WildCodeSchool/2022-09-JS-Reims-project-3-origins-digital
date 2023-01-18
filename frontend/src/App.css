@@ -2,6 +2,14 @@ body {
   background-color: #010d18;
 }
 
+.App-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #010d18;
+}
+
 .NavBar_links {
   display: flex;
   flex-direction: row;
