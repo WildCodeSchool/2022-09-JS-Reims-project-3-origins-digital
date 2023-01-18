@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 
-const CurrentVideoContext = createContext();
+const VideoContext = createContext();
 
-export default CurrentVideoContext;
+export default VideoContext;
 
-export function CurrentVideoContextProvider({ children }) {
+export function VideoContextProvider({ children }) {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/videos", {
@@ -20,12 +20,10 @@ export function CurrentVideoContextProvider({ children }) {
       });
   }, []);
   return (
-    <CurrentVideoContext.Provider value={videos}>
-      {children}
-    </CurrentVideoContext.Provider>
+    <VideoContext.Provider value={videos}>{children}</VideoContext.Provider>
   );
 }
-CurrentVideoContextProvider.propTypes = {
+VideoContextProvider.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
