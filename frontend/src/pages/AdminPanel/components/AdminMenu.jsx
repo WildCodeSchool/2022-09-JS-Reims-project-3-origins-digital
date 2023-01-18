@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import VideosModify from "./VideosModify";
+import { Link, useLocation } from "react-router-dom";
 import "./AdminMenu.css";
 
 export default function AdminMenu() {
+  const location = useLocation();
   const [videosModify, setVideosModify] = useState(false);
   const [videosUpload, setVideosUpload] = useState(false);
   const [userMembers, setUserMembers] = useState(false);
@@ -30,7 +30,16 @@ export default function AdminMenu() {
           type="button"
           className="category-menu"
         >
-          Modifier
+          <Link
+            style={{ textDecoration: "none" }}
+            to={
+              location.pathname === "/admin/videos/modify"
+                ? "/admin"
+                : "/admin/videos/modify"
+            }
+          >
+            Modifier
+          </Link>
         </button>
         <button
           onClick={() => {
@@ -99,7 +108,6 @@ export default function AdminMenu() {
           Ajouter
         </button>
       </div>
-      {videosModify && <VideosModify />}
     </div>
   );
 }
