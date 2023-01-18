@@ -1,13 +1,9 @@
-@font-face {
-  font-family: "Gilroy";
-  src: url("../../../fonts/Gilroy-ExtraBold.otf") format("truetype");
-}
-
 .admin-menu {
   background-color: #333333;
   border-right: 0.188rem solid white;
   margin-right: 80%;
   height: 100vh;
+  font-family: "Open Sans Light", sans-serif
 }
 
 .back {
