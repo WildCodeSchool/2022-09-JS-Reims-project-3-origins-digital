@@ -7,6 +7,7 @@ import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import VideosModify from "./pages/AdminPanel/components/VideosModify";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/admin/videos/modify" element={<VideosModify />} />
         </Routes>
       </div>
     </Router>
