@@ -1,3 +1,25 @@
 .title-vm {
   color: orange;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.admin-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.admin-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  flex-grow: 1;
 }
