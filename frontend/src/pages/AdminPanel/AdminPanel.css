@@ -1,9 +1,4 @@
-@font-face {
-  font-family: "Gilroy";
-  src: url("src/fonts/Gilroy-ExtraBold.otf") format("truetype");
-}
-
-body {
+.admin-panel-page {
   color: white;
   font-family: "Open Sans Light", sans-serif
 }
