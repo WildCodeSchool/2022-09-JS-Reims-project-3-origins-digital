@@ -7,7 +7,6 @@ import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { VideoContextProvider } from "./contexts/ContextVideos";
 import VideosModify from "./pages/AdminPanel/components/VideosModify";
 
 function App() {
@@ -25,5 +24,7 @@ function App() {
         </Routes>
       </div>
     </Router>
-    
+  );
+}
+
 export default App;
