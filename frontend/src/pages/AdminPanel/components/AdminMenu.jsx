@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./AdminMenu.css";
 
 export default function AdminMenu() {
-  const location = useLocation();
   const [videosModify, setVideosModify] = useState(false);
   const [videosUpload, setVideosUpload] = useState(false);
   const [userMembers, setUserMembers] = useState(false);
@@ -23,7 +22,7 @@ export default function AdminMenu() {
           <h1 className="title">Admin Panel</h1>
         </Link>
       </div>
-      <div className="border-menu">
+      <nav className="border-menu">
         <h2 className="border-category1">Vidéos</h2>
         <button
           onClick={() => {
@@ -32,16 +31,15 @@ export default function AdminMenu() {
           type="button"
           className="category-menu"
         >
-          <Link
-            style={{ textDecoration: "none" }}
-            to={
-              location.pathname === "/admin/videos/modify"
-                ? "/admin"
-                : "/admin/videos/modify"
-            }
+          <NavLink
+            to="/admin/videos/modify"
+            style={({ isActive }) => ({
+              color: isActive ? "yellow" : "white",
+              textDecoration: "none",
+            })}
           >
             Modifier
-          </Link>
+          </NavLink>
         </button>
         <button
           onClick={() => {
@@ -109,7 +107,7 @@ export default function AdminMenu() {
         >
           Ajouter
         </button>
-      </div>
+      </nav>
     </div>
   );
 }
