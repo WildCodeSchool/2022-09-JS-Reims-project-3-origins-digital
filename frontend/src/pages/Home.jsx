@@ -5,7 +5,7 @@ import VideosByCategory from "../components/VideosByCategory";
 
 export default function Home() {
   return (
-    <>
+    <div className="Full-page">
       <header className="App-header">
         <NavBar />
       </header>
@@ -14,6 +14,6 @@ export default function Home() {
         <VideosByCategory />
       </main>
       <footer>footer</footer>
-    </>
+    </div>
   );
 }
