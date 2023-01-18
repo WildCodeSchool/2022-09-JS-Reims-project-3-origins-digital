@@ -13,16 +13,14 @@ function App() {
   return (
     <VideoContextProvider>
       <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="search" element={<SearchBar />} />
-            <Route path="/videos/:id" element={<VideoPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/admin" element={<AdminPanel />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="search" element={<SearchBar />} />
+          <Route path="/videos/:id" element={<VideoPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<AdminPanel />} />
+        </Routes>
       </Router>
     </VideoContextProvider>
   );
