@@ -50,43 +50,41 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className="nav-bar-box">
-      <nav className="nav-bar" style={show ? { top: 0 } : { top: -150 }}>
-        {toggleMenu === false ? (
-          <button type="button" onClick={toggleNavSmallScreen} className="btn">
-            <RxHamburgerMenu className="menuIcon" />
-          </button>
-        ) : (
-          <button type="button" onClick={toggleNavSmallScreen} className="btn">
-            <RxCross1 className="menuIcon" />
-          </button>
-        )}
-        <img
-          className="logo"
-          alt="Origins Digital Logo"
-          src="./src/assets/OriginsLogo.png"
-        />
-        {(toggleMenu || width > breakpoint) && (
-          <ul className="liste">
-            <li className="items">ÉQUIPE PREMIÈRE</li>
-            <li className="items">FORMATION</li>
-            <li className="items">LÉGENDE</li>
-            <li className="items">
-              <Link style={{ textDecoration: "none" }} to="/admin">
-                ADMIN
-              </Link>
-            </li>
-          </ul>
-        )}
-        <div className="button-right">
-          <Link to="/login">
-            <CgProfile className="profile" />
-          </Link>
-          <Link to="/search">
-            <BiSearchAlt className="searchIcon" />
-          </Link>
-        </div>
-      </nav>
-    </div>
+    <nav className="nav-bar" style={show ? { top: 0 } : { top: -150 }}>
+      {toggleMenu === false ? (
+        <button type="button" onClick={toggleNavSmallScreen} className="btn">
+          <RxHamburgerMenu className="menuIcon" />
+        </button>
+      ) : (
+        <button type="button" onClick={toggleNavSmallScreen} className="btn">
+          <RxCross1 className="menuIcon" />
+        </button>
+      )}
+      <img
+        className="logo"
+        alt="Origins Digital Logo"
+        src="./src/assets/OriginsLogo.png"
+      />
+      {(toggleMenu || width > breakpoint) && (
+        <ul className="liste">
+          <li className="items">ÉQUIPE PREMIÈRE</li>
+          <li className="items">FORMATION</li>
+          <li className="items">LÉGENDE</li>
+          <li className="items">
+            <Link style={{ textDecoration: "none" }} to="/admin">
+              ADMIN
+            </Link>
+          </li>
+        </ul>
+      )}
+      <div className="button-right">
+        <Link to="/login">
+          <CgProfile className="profile" />
+        </Link>
+        <Link to="/search">
+          <BiSearchAlt className="searchIcon" />
+        </Link>
+      </div>
+    </nav>
   );
 }
