@@ -1,17 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./AdminMenu.css";
 
 export default function AdminMenu() {
-  const [videosModify, setVideosModify] = useState(false);
-  const [videosUpload, setVideosUpload] = useState(false);
-  const [userMembers, setUserMembers] = useState(false);
-  const [userAdmins, setUserAdmins] = useState(false);
-  const [pagesModify, setPagesModify] = useState(false);
-  const [pagesUpload, setPagesUpload] = useState(false);
-  const [sectionsModify, setSectionsModify] = useState(false);
-  const [sectionsUpload, setSectionsUpload] = useState(false);
-
   return (
     <div className="admin-menu">
       <Link to="/">
@@ -24,89 +15,89 @@ export default function AdminMenu() {
       </div>
       <nav className="border-menu">
         <h2 className="border-category1">Vidéos</h2>
-        <button
-          onClick={() => {
-            setVideosModify(!videosModify);
-          }}
-          type="button"
+        <NavLink
           className="category-menu"
+          to="/admin/videos/modify"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
-          <NavLink
-            to="/admin/videos/modify"
-            style={({ isActive }) => ({
-              color: isActive ? "yellow" : "white",
-              textDecoration: "none",
-            })}
-          >
-            Modifier
-          </NavLink>
-        </button>
-        <button
-          onClick={() => {
-            setVideosUpload(!videosUpload);
-          }}
-          type="button"
+          Modifier
+        </NavLink>
+        <NavLink
           className="category-menu"
+          to="/admin/videos/upload"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
           Ajouter
-        </button>
+        </NavLink>
         <h2 className="border-category2">Utilisateurs</h2>
-        <button
-          onClick={() => {
-            setUserMembers(!userMembers);
-          }}
-          type="button"
+        <NavLink
           className="category-menu"
+          to="/admin/users/members"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
           Membres
-        </button>
-        <button
-          onClick={() => {
-            setUserAdmins(!userAdmins);
-          }}
-          type="button"
+        </NavLink>
+        <NavLink
           className="category-menu"
+          to="/admin/users/administrators"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
           Administrateurs
-        </button>
+        </NavLink>
         <h2 className="border-category2">Pages</h2>
-        <button
-          onClick={() => {
-            setPagesModify(!pagesModify);
-          }}
-          type="button"
+        <NavLink
           className="category-menu"
+          to="/admin/pages/modify"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
           Modifier
-        </button>
-        <button
-          onClick={() => {
-            setPagesUpload(!pagesUpload);
-          }}
-          type="button"
+        </NavLink>
+        <NavLink
           className="category-menu"
+          to="/admin/pages/upload"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
           Ajouter
-        </button>
+        </NavLink>
         <h2 className="border-category2">Sections</h2>
-        <button
-          onClick={() => {
-            setSectionsModify(!sectionsModify);
-          }}
-          type="button"
+        <NavLink
           className="category-menu"
+          to="/admin/sections/modify"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
           Modifier
-        </button>
-        <button
-          onClick={() => {
-            setSectionsUpload(!sectionsUpload);
-          }}
-          type="button"
+        </NavLink>
+        <NavLink
           className="category-menu"
+          to="/admin/sections/upload"
+          style={({ isActive }) => ({
+            color: isActive ? "yellow" : "white",
+            textDecoration: "none",
+          })}
         >
           Ajouter
-        </button>
+        </NavLink>
       </nav>
     </div>
   );
