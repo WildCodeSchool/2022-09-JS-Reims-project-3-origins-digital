@@ -47,6 +47,7 @@ CREATE TABLE video
 	description_video VARCHAR(500)        NOT NULL,
 	publication_date  date                NOT NULL,
 	link              VARCHAR(100)        NOT NULL,
+	thumbnail VARCHAR(200) NOT NULL,
 	category_id       INT                 NOT NULL,
 	CONSTRAINT fk_video_category
 		FOREIGN KEY (category_id)
