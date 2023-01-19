@@ -10,6 +10,7 @@ const breakpoint = 992;
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
+  const [show, setShow] = useState(true);
 
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu);
@@ -26,13 +27,30 @@ export default function NavBar() {
 
     window.addEventListener("resize", changeWidth);
 
+    let oldValue = 0;
+    let newValue = 0;
+
+    window.addEventListener("scroll", () => {
+      // Get the new Value
+      newValue = window.scrollY;
+
+      if (oldValue - newValue < 0) {
+        setShow(false);
+      } else if (oldValue - newValue > 0) {
+        setShow(true);
+      }
+
+      // Update the old value
+      oldValue = newValue;
+    });
+
     return () => {
       window.removeEventListener("resize", changeWidth);
     };
   }, []);
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" style={show ? { top: 0 } : { top: -150 }}>
       {toggleMenu === false ? (
         <button type="button" onClick={toggleNavSmallScreen} className="btn">
           <RxHamburgerMenu className="menuIcon" />

@@ -6,7 +6,7 @@
   transition-duration: 500ms;
   position: relative;
   padding: 1rem;
-  background-color: inherit;
+  background: #010d18;
 }
 
 .liste {
@@ -77,7 +77,6 @@
   height: 4rem;
 }
 
-/* why the magic number ? https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints */
 @media screen and (min-width: 992px) {
   .liste {
     flex-direction: row;
@@ -90,5 +89,11 @@
 
   .btn {
     display: none;
+  }
+
+  .nav-bar {
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
   }
 }

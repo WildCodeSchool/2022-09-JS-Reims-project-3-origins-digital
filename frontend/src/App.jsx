@@ -25,6 +25,7 @@ function App() {
         </Routes>
       </Router>
     </VideoContextProvider>
+    </CategoryContextProvider>
   );
 }
 
