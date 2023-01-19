@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
-}
-
-@font-face {
-  font-family: "Open Sans Light";
-  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
-}
-
 .section-video {
   padding-top: 3rem;
   margin: 1rem;
