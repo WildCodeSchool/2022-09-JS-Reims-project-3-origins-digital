@@ -1,4 +1,27 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  background-color: #010d18;
+}
+
+.App-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background-color: #010d18;
 }
 

@@ -5,6 +5,8 @@ import { CgProfile } from "react-icons/cg";
 import "./NavBar.css";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
+const breakpoint = 992;
+
 export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
@@ -17,7 +19,7 @@ export default function NavBar() {
     const changeWidth = () => {
       setWidth(window.innerWidth);
 
-      if (window.innerWidth > 500) {
+      if (window.innerWidth > breakpoint) {
         setToggleMenu(false);
       }
     };
@@ -40,7 +42,12 @@ export default function NavBar() {
           <RxCross1 className="menuIcon" />
         </button>
       )}
-      {(toggleMenu || width > 500) && (
+      <img
+        className="logo"
+        alt="Origins Digital Logo"
+        src="./src/assets/OriginsLogo.png"
+      />
+      {(toggleMenu || width > breakpoint) && (
         <ul className="liste">
           <li className="items">ÉQUIPE PREMIÈRE</li>
           <li className="items">FORMATION</li>
@@ -52,11 +59,6 @@ export default function NavBar() {
           </li>
         </ul>
       )}
-      <img
-        className="logo"
-        alt="Origins Digital Logo"
-        src="./src/assets/OriginsLogo.png"
-      />
       <div className="button-right">
         <Link to="/login">
           <CgProfile className="profile" />

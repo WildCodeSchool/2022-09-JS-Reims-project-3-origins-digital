@@ -13,6 +13,8 @@ function App() {
   return (
     <Router>
       <div className="App">
+    <VideoContextProvider>
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="search" element={<SearchBar />} />
@@ -24,6 +26,9 @@ function App() {
         </Routes>
       </div>
     </Router>
+        </Routes>
+      </Router>
+    </VideoContextProvider>
   );
 }
 
