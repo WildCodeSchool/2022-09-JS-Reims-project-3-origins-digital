@@ -3,12 +3,17 @@ import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaLessThan } from "react-icons/fa";
 import VideoContext from "../contexts/ContextVideos";
+import CategoryContext from "../contexts/ContextCategory";
 
 export default function VideoPage() {
   const { id } = useParams();
   const videos = useContext(VideoContext);
+  const category = useContext(CategoryContext);
   const video = videos.find(
     (possibleVideo) => possibleVideo.id === parseInt(id, 10)
+  );
+  const categoryVideo = category.find(
+    (possibleCategory) => possibleCategory.id === video.category_id
   );
 
   return (
@@ -38,7 +43,10 @@ export default function VideoPage() {
             </div>
             <hr className="barre" />
             <h2 className="informations"> INFORMATIONS</h2>
-            <h3 className="category">catégorie</h3>
+            <h3 className="category">
+              {" "}
+              Catégorie : {categoryVideo.category_name}
+            </h3>
             <h2 className="validite"> VALIDITE : </h2>
             <h3 className="validateInfosStart">
               Publié : {video.publication_date}
