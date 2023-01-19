@@ -7,12 +7,10 @@ import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import VideosModify from "./pages/AdminPanel/components/VideosModify";
+import { VideoContextProvider } from "./contexts/ContextVideos";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
     <VideoContextProvider>
       <Router>
         <Routes>
@@ -22,10 +20,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/admin/videos/modify" element={<VideosModify />} />
-        </Routes>
-      </div>
-    </Router>
         </Routes>
       </Router>
     </VideoContextProvider>
