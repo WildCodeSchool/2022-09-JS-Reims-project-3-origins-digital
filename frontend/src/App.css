@@ -38,7 +38,7 @@ p {
 /* CAROUSEL STYLE */
 
 .swiper {
-  width: 100%;
+  width: inherit;
   height: 50vh;
 }
 
