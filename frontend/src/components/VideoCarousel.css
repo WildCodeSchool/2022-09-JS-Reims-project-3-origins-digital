@@ -37,3 +37,9 @@ hr {
   border: 1px solid #94b1d4;
   border-radius: 30%;
 }
+@media screen and (min-width: 992px) {
+  .scroll {
+    scroll-snap-type: initial;
+    overflow: initial;
+  }
+}
