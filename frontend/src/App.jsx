@@ -10,24 +10,27 @@ import Register from "./components/Register";
 import { VideoContextProvider } from "./contexts/ContextVideos";
 import { CategoryContextProvider } from "./contexts/ContextCategory";
 import VideosModify from "./pages/AdminPanel/components/VideosModify";
+import { AuthContextProvider } from "./contexts/ContextAuth";
 
 function App() {
   return (
-    <CategoryContextProvider>
-      <VideoContextProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="search" element={<SearchBar />} />
-            <Route path="/videos/:id" element={<VideoPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/admin" element={<AdminPanel />} />
-            <Route path="/admin/videos/modify" element={<VideosModify />} />
-          </Routes>
-        </Router>
-      </VideoContextProvider>
-    </CategoryContextProvider>
+    <AuthContextProvider>
+      <CategoryContextProvider>
+        <VideoContextProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="search" element={<SearchBar />} />
+              <Route path="/videos/:id" element={<VideoPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/admin" element={<AdminPanel />} />
+              <Route path="/admin/videos/modify" element={<VideosModify />} />
+            </Routes>
+          </Router>
+        </VideoContextProvider>
+      </CategoryContextProvider>
+    </AuthContextProvider>
   );
 }
 

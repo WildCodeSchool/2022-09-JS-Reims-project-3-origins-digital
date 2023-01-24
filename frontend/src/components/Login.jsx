@@ -1,10 +1,12 @@
 /* eslint-disable no-alert */
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/ContextAuth";
 import "./Login.css";
 
 export default function Login() {
+  const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState("password");
   const [errorInput, setErrorInput] = useState(false);
@@ -25,13 +27,23 @@ export default function Login() {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.token) {
+        const { token, user } = data;
+        const { role } = user;
+        if (token) {
+          setAuth((oldAuth) => ({
+            ...oldAuth,
+            isAuthenticated: true,
+            token,
+            role,
+          }));
           navigate("/");
+        } else {
+          setErrorInput(true);
         }
       })
+
       .catch((err) => {
         console.error(err);
-        setErrorInput(true);
       });
   };
   return (

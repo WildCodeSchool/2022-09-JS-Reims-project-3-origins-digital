@@ -19,7 +19,6 @@ export default function Register() {
       username: userNameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
-      role_id: 3,
     };
     fetch("http://localhost:5000/users", {
       method: "POST",
