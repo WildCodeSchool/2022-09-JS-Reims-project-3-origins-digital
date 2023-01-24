@@ -1,15 +1,3 @@
-CREATE TABLE role
-(
-	id        INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	role_name VARCHAR(50)         NOT NULL
-) engine = InnoDB
-  default charset = latin1;
-
-INSERT INTO role (role_name)
-VALUES ('Admin'),
-	   ('Subscriber'),
-	   ('Free');
-
 CREATE TABLE user
 (
 	id             INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -18,16 +6,15 @@ CREATE TABLE user
 	username       VARCHAR(100)        NOT NULL UNIQUE,
 	email          VARCHAR(100)        NOT NULL UNIQUE,
 	hashedPassword VARCHAR(100)        NOT NULL,
-	role_id        INT                 NOT NULL,
-	CONSTRAINT fk_user_role
-		FOREIGN KEY (role_id)
-			REFERENCES role (id)
+	role        	VARCHAR(15) NOT NULL DEFAULT 'free'
 ) engine = InnoDB
   default charset = latin1;
 
-INSERT INTO user (firstname, lastname, username, email, hashedPassword, role_id)
+INSERT INTO user (firstname, lastname, username, email, hashedPassword, role)
 VALUES ('Charlotte', 'Kieffer', 'Cha', 'kindred242@gmail.com',
-		'$argon2id$v=19$m=16,t=2,p=1$emVmemVmemVmemZlenplZHpkZGZ6ZnpmZXphZGF6ZGQ$UKaGZ9hGFn/S5SBQDMe/Uw', 1);
+		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin'),
+		('Romain', 'Bronquard', 'DarkOviS', 'romain.bronquard@gmail.com',
+		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin');
 
 CREATE TABLE category
 (
