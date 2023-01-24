@@ -13,7 +13,7 @@ CREATE TABLE user
 INSERT INTO user (firstname, lastname, username, email, hashedPassword, role)
 VALUES ('Charlotte', 'Kieffer', 'Cha', 'kindred242@gmail.com',
 		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin'),
-		('Romain', 'bronquard', 'DarkOviS', 'romain.bronquard@gmail.com',
+		('Romain', 'Bronquard', 'DarkOviS', 'romain.bronquard@gmail.com',
 		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin');
 
 CREATE TABLE category
