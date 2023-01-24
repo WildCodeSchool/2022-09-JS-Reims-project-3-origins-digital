@@ -28,13 +28,14 @@ export default function Login() {
       .then((response) => response.json())
       .then((data) => {
         const { token, user } = data;
-        const { role } = user;
+        const { role, id } = user;
         if (token) {
           setAuth((oldAuth) => ({
             ...oldAuth,
             isAuthenticated: true,
             token,
             role,
+            id,
           }));
           navigate("/");
         } else {
