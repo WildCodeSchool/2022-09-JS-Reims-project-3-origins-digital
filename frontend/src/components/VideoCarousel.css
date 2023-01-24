@@ -11,7 +11,7 @@
   scroll-snap-type: x;
   overflow-x: scroll;
   display: flex;
-  align-items: center;
+  align-items: top;
   color: white;
 }
 
@@ -41,6 +41,5 @@ hr {
 @media screen and (min-width: 992px) {
   .scroll {
     scroll-snap-type: initial;
-    overflow: initial;
   }
 }
