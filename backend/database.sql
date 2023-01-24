@@ -1,15 +1,3 @@
-CREATE TABLE role
-(
-	id        INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	role_name VARCHAR(50)         NOT NULL
-) engine = InnoDB
-  default charset = latin1;
-
-INSERT INTO role (role_name)
-VALUES ('Admin'),
-	   ('Subscriber'),
-	   ('Free');
-
 CREATE TABLE user
 (
 	id             INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -18,10 +6,7 @@ CREATE TABLE user
 	username       VARCHAR(100)        NOT NULL UNIQUE,
 	email          VARCHAR(100)        NOT NULL UNIQUE,
 	hashedPassword VARCHAR(100)        NOT NULL,
-	role_id        INT                 NOT NULL,
-	CONSTRAINT fk_user_role
-		FOREIGN KEY (role_id)
-			REFERENCES role (id)
+	role        	VARCHAR(15) NOT NULL DEFAULT 'free',
 ) engine = InnoDB
   default charset = latin1;
 
