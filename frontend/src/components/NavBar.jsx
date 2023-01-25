@@ -73,14 +73,12 @@ export default function NavBar() {
           <li className="items">ÉQUIPE PREMIÈRE</li>
           <li className="items">FORMATION</li>
           <li className="items">LÉGENDE</li>
-          <li className="items">
-            {auth.role === "admin" && (
-              <Link style={{ textDecoration: "none" }} to="/admin">
-                ADMIN
-              </Link>
-            )}
-          </li>
         </ul>
+      )}
+      {auth.role === "admin" && width > breakpoint && (
+        <Link style={{ textDecoration: "none" }} to="/admin">
+          ADMIN
+        </Link>
       )}
       <div className="button-right">
         {auth.isAuthenticated ? (
