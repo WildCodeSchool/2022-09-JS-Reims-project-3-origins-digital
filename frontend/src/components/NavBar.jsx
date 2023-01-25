@@ -10,6 +10,7 @@ const breakpoint = 992;
 
 export default function NavBar() {
   const { auth } = useContext(AuthContext);
+  const [showProfile, setShowProfile] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [show, setShow] = useState(true);
@@ -84,7 +85,18 @@ export default function NavBar() {
       <div className="button-right">
         {auth.isAuthenticated ? (
           <div>
-            <CgProfile className="profile" />
+            <button type="button">
+              <CgProfile
+                className="profile"
+                onClick={() => setShowProfile(!showProfile)}
+              />
+            </button>
+            {showProfile && (
+              <ul className="listProfile">
+                <li className="itemsProfile">Profil</li>
+                <li className="itemsProfile">Déconnexion</li>
+              </ul>
+            )}
           </div>
         ) : (
           <Link to="/login">
