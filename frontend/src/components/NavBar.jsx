@@ -9,7 +9,7 @@ import { AuthContext } from "../contexts/ContextAuth";
 const breakpoint = 992;
 
 export default function NavBar() {
-  const { auth } = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
   const [showProfile, setShowProfile] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
@@ -91,8 +91,22 @@ export default function NavBar() {
             </button>
             {showProfile && (
               <ul className="listProfile">
-                <li className="itemsProfile">Profil</li>
-                <li className="itemsProfile">Déconnexion</li>
+                <Link to="/profile">
+                  <li className="itemsProfile">Profil</li>
+                </Link>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setAuth({
+                      isAuthenticated: false,
+                      token: null,
+                      role: null,
+                      id: null,
+                    })
+                  }
+                >
+                  <li className="itemsProfile">Déconnexion</li>
+                </button>
               </ul>
             )}
           </div>
