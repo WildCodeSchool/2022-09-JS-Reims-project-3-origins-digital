@@ -28,7 +28,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/admin" element={<AdminPanel />} />
               <Route path="/admin/videos/modify" element={<VideosModify />} />
-              <Route path="/admin/video" element={<VideoList />} />
+              <Route path="/admin/videos" element={<VideoList />} />
               <Route path="/admin/videos/:id" element={<VideoEditPage />} />
             </Routes>
           </Router>
