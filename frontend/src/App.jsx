@@ -11,6 +11,8 @@ import { VideoContextProvider } from "./contexts/ContextVideos";
 import { CategoryContextProvider } from "./contexts/ContextCategory";
 import VideosModify from "./pages/AdminPanel/components/VideosModify";
 import { AuthContextProvider } from "./contexts/ContextAuth";
+import VideoList from "./pages/AdminPanel/components/VideoList";
+import VideoEditPage from "./pages/AdminPanel/components/VideoEditPage";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/admin" element={<AdminPanel />} />
               <Route path="/admin/videos/modify" element={<VideosModify />} />
+              <Route path="/admin/videos" element={<VideoList />} />
+              <Route path="/admin/videos/:id" element={<VideoEditPage />} />
             </Routes>
           </Router>
         </VideoContextProvider>

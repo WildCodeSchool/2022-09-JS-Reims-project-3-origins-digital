@@ -13,7 +13,6 @@ export default function Home() {
         <ImageCarousel />
         <VideosByCategory />
       </main>
-      <footer>footer</footer>
     </div>
   );
 }

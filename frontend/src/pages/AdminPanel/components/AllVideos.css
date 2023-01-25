@@ -1,0 +1,11 @@
+.video_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 23px;
+}
+
+h1 {
+  font-size: 1rem;
+}

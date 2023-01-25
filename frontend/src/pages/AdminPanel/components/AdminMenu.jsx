@@ -14,26 +14,15 @@ export default function AdminMenu() {
         </Link>
       </div>
       <nav className="border-menu">
-        <h2 className="border-category1">Vidéos</h2>
         <NavLink
           className="category-menu"
-          to="/admin/videos/modify"
+          to="/admin/video"
           style={({ isActive }) => ({
             color: isActive ? "yellow" : "white",
             textDecoration: "none",
           })}
         >
-          Modifier
-        </NavLink>
-        <NavLink
-          className="category-menu"
-          to="/admin/videos/upload"
-          style={({ isActive }) => ({
-            color: isActive ? "yellow" : "white",
-            textDecoration: "none",
-          })}
-        >
-          Ajouter
+          Video
         </NavLink>
         <h2 className="border-category2">Utilisateurs</h2>
         <NavLink
