@@ -16,7 +16,7 @@ export default function AdminMenu() {
       <nav className="border-menu">
         <NavLink
           className="category-menu"
-          to="/admin/video"
+          to="/admin/videos"
           style={({ isActive }) => ({
             color: isActive ? "yellow" : "white",
             textDecoration: "none",
