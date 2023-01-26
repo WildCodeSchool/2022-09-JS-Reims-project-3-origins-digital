@@ -131,3 +131,11 @@
   border: 1px solid #94b1d4;
   border-radius: 30%;
 }
+
+@media screen and (min-width: 800px) {
+  .video-player {
+    margin: 1em 2em;
+    width: 85%;
+    height: 10%;
+  }
+}
