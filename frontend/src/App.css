@@ -60,3 +60,7 @@ p {
   -webkit-align-items: center;
   align-items: center;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
