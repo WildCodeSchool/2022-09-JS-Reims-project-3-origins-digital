@@ -15,7 +15,7 @@ const getOneUser = (req, res) => {
   models.user
     .find(req.params.id)
     .then(([rows]) => {
-      if (rows[0] == null) {
+      if (rows[0] == null && req.params.id === req.payload.sub) {
         res.sendStatus(404);
       } else {
         res.send(rows[0]);
@@ -26,17 +26,17 @@ const getOneUser = (req, res) => {
       res.sendStatus(500);
     });
 };
+
 const editUser = (req, res) => {
   const user = req.body;
 
   // TODO validations (length, format...)
 
   user.id = parseInt(req.params.id, 10);
-
   models.user
     .update(user)
     .then(([result]) => {
-      if (result.affectedRows === 0) {
+      if (result.affectedRows === 0 && req.params.id === req.payload.sub) {
         res.sendStatus(404);
       } else {
         res.sendStatus(204);
@@ -47,6 +47,7 @@ const editUser = (req, res) => {
       res.sendStatus(500);
     });
 };
+
 const addUser = (req, res) => {
   const user = req.body;
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import "./NavBar.css";
@@ -14,7 +14,17 @@ export default function NavBar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [show, setShow] = useState(true);
+  const navigate = useNavigate();
 
+  const deconnection = () => {
+    setAuth({
+      isAuthenticated: false,
+      token: null,
+      role: null,
+      id: null,
+    });
+    navigate("/");
+  };
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu);
   };
@@ -107,14 +117,7 @@ export default function NavBar() {
                   <button
                     type="button"
                     className="btn_listProfile"
-                    onClick={() =>
-                      setAuth({
-                        isAuthenticated: false,
-                        token: null,
-                        role: null,
-                        id: null,
-                      })
-                    }
+                    onClick={deconnection}
                   >
                     Déconnexion
                   </button>

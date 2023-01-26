@@ -18,18 +18,22 @@ router.post(
   verifyPassword
 );
 
-router.get("/users", userControllers.getUsers);
-router.get("/users/:id", userControllers.getOneUser);
 router.get("/videos", videoControllers.getVideos);
 router.get("/videos/:id", videoControllers.getOneVideo);
-router.post("/users", hashPassword, userControllers.addUser);
+
 router.get("/category", categoryControllers.getCategory);
 router.get("/category/:id", categoryControllers.getOneCategory);
-router.use(verifyToken);
 
+router.post("/users", hashPassword, userControllers.addUser);
+
+router.use(verifyToken); // authentication wall
+
+router.get("/users/:id", userControllers.getOneUser);
 router.put("/users/:id", hashPassword, userControllers.editUser);
-router.use(verifyAdmin);
 
+router.use(verifyAdmin); // admin wall
+
+router.get("/users", userControllers.getUsers);
 router.put("/videos/:id", videoControllers.editVideo);
 router.post("/videos", videoControllers.addVideo);
 router.delete("/videos/:id", videoControllers.destroyVideo);

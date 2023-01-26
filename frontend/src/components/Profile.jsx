@@ -21,6 +21,7 @@ export default function Profile() {
   useEffect(() => {
     fetch(`http://localhost:5000/users/${auth.id}`, {
       method: "GET",
+      headers: { Authorization: `Bearer ${auth.token}` },
     })
       .then((res) => res.json())
       .then((data) => {
