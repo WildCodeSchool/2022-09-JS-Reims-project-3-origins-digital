@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Register.css";
+import "./RegisterAndProfile.css";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function Register() {
