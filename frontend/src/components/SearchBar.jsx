@@ -68,9 +68,9 @@ export default function SearchBar() {
         <div className="results">
           {filteredMovies.map((value) => {
             return (
-              <a className="resultItem" href={value.link} key={value.id}>
+              <Link to={`/videos/${value.id}`}>
                 <p>{value.title}</p>
-              </a>
+              </Link>
             );
           })}
         </div>

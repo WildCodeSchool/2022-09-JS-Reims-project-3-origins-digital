@@ -27,7 +27,7 @@ const verifyPassword = (req, res) => {
     .verify(req.user.hashedPassword, req.body.password)
     .then((isVerified) => {
       if (isVerified) {
-        const payload = { sub: req.user.id };
+        const payload = { sub: req.user.id, role: req.user.role };
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           expiresIn: "1h",
@@ -65,8 +65,16 @@ const verifyToken = (req, res, next) => {
     res.sendStatus(401);
   }
 };
+const verifyAdmin = (req, res, next) => {
+  if (req.payload.role === "admin") {
+    next();
+  } else {
+    res.sendStatus(403);
+  }
+};
 module.exports = {
   hashPassword,
   verifyPassword,
   verifyToken,
+  verifyAdmin,
 };
