@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./RegisterAndProfile.css";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import "./RegisterAndProfile.css";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -34,11 +35,14 @@ export default function Register() {
 
   return (
     <div className="register">
-      <img
-        src="./src/assets/OriginsLogo.png"
-        alt="OriginsLogo"
-        className="logo_origins"
-      />
+      <Link to="/" className="Logo_content">
+        <img
+          src="./src/assets/OriginsLogo.png"
+          alt="OriginsLogo"
+          className="logo_origins"
+        />
+      </Link>
+
       <form
         className="form_register"
         onSubmit={(e) => {
@@ -93,6 +97,34 @@ export default function Register() {
             minLength="8"
             required
             placeholder="Mot de passe"
+            className="password_register"
+            ref={passwordRef}
+          />
+        </div>
+
+        <div className="password_box_register">
+          {showPassword === "password" ? (
+            <AiFillEye
+              className="icon_register"
+              onClick={() => {
+                setShowPassword("text");
+              }}
+            />
+          ) : (
+            <AiFillEyeInvisible
+              className="icon_register"
+              onClick={() => {
+                setShowPassword("password");
+              }}
+            />
+          )}
+
+          <input
+            type={showPassword}
+            name="password"
+            minLength="8"
+            required
+            placeholder="Confirmer le mot de passe"
             className="password_register"
             ref={passwordRef}
           />
