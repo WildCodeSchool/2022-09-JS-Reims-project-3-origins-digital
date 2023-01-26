@@ -63,22 +63,26 @@ export default function NavBar() {
           <RxCross1 className="menuIcon" />
         </button>
       )}
-      <img
-        className="logo"
-        alt="Origins Digital Logo"
-        src="./src/assets/OriginsLogo.png"
-      />
+      <Link to="/">
+        <img
+          className="logo"
+          alt="Origins Digital Logo"
+          src="src/assets/OriginsLogo.png"
+        />
+      </Link>
       {(toggleMenu || width > breakpoint) && (
         <ul className="liste">
           <li className="items">ÉQUIPE PREMIÈRE</li>
           <li className="items">FORMATION</li>
           <li className="items">LÉGENDE</li>
+          {auth.role === "admin" && width > breakpoint && (
+            <li className="items">
+              <Link style={{ textDecoration: "none" }} to="/admin">
+                ADMIN
+              </Link>
+            </li>
+          )}
         </ul>
-      )}
-      {auth.role === "admin" && width > breakpoint && (
-        <Link style={{ textDecoration: "none" }} to="/admin">
-          ADMIN
-        </Link>
       )}
       <div className="button-right">
         {auth.isAuthenticated ? (
@@ -91,22 +95,30 @@ export default function NavBar() {
             </button>
             {showProfile && (
               <ul className="listProfile">
-                <Link to="/profile">
-                  <li className="itemsProfile">Profil</li>
-                </Link>
-                <button
-                  type="button"
-                  onClick={() =>
-                    setAuth({
-                      isAuthenticated: false,
-                      token: null,
-                      role: null,
-                      id: null,
-                    })
-                  }
-                >
-                  <li className="itemsProfile">Déconnexion</li>
-                </button>
+                <li className="itemsProfile">
+                  <button type="button">
+                    <Link to="/profile" className="btn_listProfile">
+                      Profil
+                    </Link>
+                  </button>
+                </li>
+
+                <li className="itemsProfile">
+                  <button
+                    type="button"
+                    className="btn_listProfile"
+                    onClick={() =>
+                      setAuth({
+                        isAuthenticated: false,
+                        token: null,
+                        role: null,
+                        id: null,
+                      })
+                    }
+                  >
+                    Déconnexion
+                  </button>
+                </li>
               </ul>
             )}
           </div>
