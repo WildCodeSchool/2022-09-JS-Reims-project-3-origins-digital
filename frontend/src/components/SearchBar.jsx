@@ -27,7 +27,7 @@ export default function SearchBar() {
     });
 
     if (searchWord === "") {
-      setFilteredMovies([]);
+      setFilteredMovies(movies);
     } else {
       setFilteredMovies(newFilter);
     }
@@ -47,7 +47,7 @@ export default function SearchBar() {
   }, []);
 
   return (
-    <>
+    <div className="search-container">
       <NavBar />
       <div className="SearchBar">
         <Link to="/">
@@ -64,17 +64,41 @@ export default function SearchBar() {
           Rechercher
         </button>
       </div>
-      {filteredMovies.length !== 0 && (
+      {filteredMovies.length > 0 ? (
         <div className="results">
           {filteredMovies.map((value) => {
             return (
-              <Link to={`/videos/${value.id}`}>
-                <p>{value.title}</p>
-              </Link>
+              <div className="SearchValue">
+                <Link to={`/videos/${value.id}`}>
+                  <img
+                    className="SearchThumbnail"
+                    src={value.thumbnail}
+                    alt={value.title}
+                  />
+                </Link>
+                <p className="SearchTitle">{value.title}</p>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="results">
+          {movies.map((value) => {
+            return (
+              <div className="SearchValue">
+                <Link to={`/videos/${value.id}`}>
+                  <img
+                    className="SearchThumbnail"
+                    src={value.thumbnail}
+                    alt={value.title}
+                  />
+                </Link>
+                <p className="SearchTitle">{value.title}</p>
+              </div>
             );
           })}
         </div>
       )}
-    </>
+    </div>
   );
 }

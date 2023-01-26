@@ -23,7 +23,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="search" element={<SearchBar />} />
+              <Route path="/search" element={<SearchBar />} />
               <Route path="/videos/:id" element={<VideoPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
