@@ -4,15 +4,16 @@ import { Link, useParams } from "react-router-dom";
 import { FaLessThan } from "react-icons/fa";
 import VideoContext from "../contexts/ContextVideos";
 import CategoryContext from "../contexts/ContextCategory";
+import VideoCarousel from "./VideoCarousel";
 
 export default function VideoPage() {
   const { id } = useParams();
   const videos = useContext(VideoContext);
-  const category = useContext(CategoryContext);
+  const categories = useContext(CategoryContext);
   const video = videos.find(
     (possibleVideo) => possibleVideo.id === parseInt(id, 10)
   );
-  const categoryVideo = category.find(
+  const categoryVideo = categories.find(
     (possibleCategory) => possibleCategory.id === video.category_id
   );
 
@@ -56,6 +57,14 @@ export default function VideoPage() {
               <h2 className="subtitle"> LANGUES</h2>
               <h3 className="subtitleInfos">French, English, Spanish</h3>
             </div>
+            <hr className="barre" />
+            <VideoCarousel
+              title={categoryVideo.category_name}
+              videos={videos.filter(
+                (clip) => clip.category_id === categoryVideo.id
+              )}
+              category={categoryVideo}
+            />
           </div>
         </div>
       </div>

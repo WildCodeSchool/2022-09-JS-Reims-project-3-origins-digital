@@ -150,9 +150,4 @@
     display: flex;
     justify-content: center;
   }
-
-  .responsive-video {
-    display: flex;
-    justify-content: space-around;
-  }
 }
