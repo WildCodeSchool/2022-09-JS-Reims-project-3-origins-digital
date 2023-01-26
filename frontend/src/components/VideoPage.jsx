@@ -5,6 +5,7 @@ import { FaLessThan } from "react-icons/fa";
 import VideoContext from "../contexts/ContextVideos";
 import CategoryContext from "../contexts/ContextCategory";
 import VideoCarousel from "./VideoCarousel";
+import "./VideoCarousel.css";
 
 export default function VideoPage() {
   const { id } = useParams();
@@ -58,13 +59,15 @@ export default function VideoPage() {
               <h3 className="subtitleInfos">French, English, Spanish</h3>
             </div>
             <hr className="barre" />
-            <VideoCarousel
-              title={categoryVideo.category_name}
-              videos={videos.filter(
-                (clip) => clip.category_id === categoryVideo.id
-              )}
-              category={categoryVideo}
-            />
+            <div className="carousel_videopage">
+              <VideoCarousel
+                title={categoryVideo.category_name}
+                videos={videos.filter(
+                  (clip) => clip.category_id === categoryVideo.id
+                )}
+                category={categoryVideo}
+              />
+            </div>
           </div>
         </div>
       </div>
