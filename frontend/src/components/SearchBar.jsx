@@ -1,4 +1,3 @@
-import { FaLessThan } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
@@ -8,10 +7,6 @@ export default function SearchBar() {
   const [searchInput, setSearchInput] = useState("");
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
 
   function handleChange(event) {
     setSearchInput(event.target.value);
@@ -50,9 +45,6 @@ export default function SearchBar() {
     <div className="search-container">
       <NavBar />
       <div className="SearchBar">
-        <Link to="/">
-          <FaLessThan className="return_button" />
-        </Link>
         <input
           type="search"
           id="site-search"
@@ -60,15 +52,12 @@ export default function SearchBar() {
           onChange={handleChange}
           value={searchInput}
         />
-        <button className="searchBtn" type="submit" onSubmit={handleSubmit}>
-          Rechercher
-        </button>
       </div>
       {filteredMovies.length > 0 ? (
         <div className="results">
           {filteredMovies.map((value) => {
             return (
-              <div className="SearchValue">
+              <div className="SearchValue" key={value.id}>
                 <Link to={`/videos/${value.id}`}>
                   <img
                     className="SearchThumbnail"
@@ -85,7 +74,7 @@ export default function SearchBar() {
         <div className="results">
           {movies.map((value) => {
             return (
-              <div className="SearchValue">
+              <div className="SearchValue" key={value.id}>
                 <Link to={`/videos/${value.id}`}>
                   <img
                     className="SearchThumbnail"

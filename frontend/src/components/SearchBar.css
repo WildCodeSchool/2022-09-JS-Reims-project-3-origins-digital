@@ -64,4 +64,10 @@
   .SearchValue {
     width: 28%;
   }
+  #site-search {
+    width: 30rem;
+  }
+  .SearchBar {
+    justify-content: center;
+  }
 }
