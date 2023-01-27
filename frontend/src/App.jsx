@@ -13,6 +13,7 @@ import VideosModify from "./pages/AdminPanel/components/VideosModify";
 import { AuthContextProvider } from "./contexts/ContextAuth";
 import VideoList from "./pages/AdminPanel/components/VideoList";
 import VideoEditPage from "./pages/AdminPanel/components/VideoEditPage";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="search" element={<SearchBar />} />
+              <Route path="/search" element={<SearchBar />} />
               <Route path="/videos/:id" element={<VideoPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
@@ -33,6 +34,8 @@ function App() {
                 element={<VideoEditPage />}
               />
               <Route path="/admin/videos" element={<VideoList />} />
+              <Route path="/admin/videos/:id" element={<VideoEditPage />} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </Router>
         </VideoContextProvider>
