@@ -1,11 +1,44 @@
 .video_grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 50px;
-  grid-row-gap: 23px;
+  margin: 2rem;
 }
 
 h1 {
   font-size: 1rem;
+}
+
+.thumbnail {
+  width: 10vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.video_tile {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 1px solid #ff680a;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.video_name {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.button {
+  margin-bottom: 0.5rem;
 }

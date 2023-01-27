@@ -10,16 +10,21 @@ export default function VideosByCategory() {
   return (
     <div className="video_grid">
       {videos.map((video) => (
-        <div>
+        <div className="video_tile">
           <img src={video.thumbnail} alt={video.title} className="thumbnail" />
-          <h1>{video.title}</h1>
-          <button
-            type="button"
-            onClick={() => navigate(`/admin/videos/${video.id}`)}
-          >
-            Editer
-          </button>
-          <button type="button">supprimer</button>
+          <h1 className="video_name">{video.title}</h1>
+          <div className="buttons">
+            <button
+              className="button"
+              type="button"
+              onClick={() => navigate(`/admin/videos/${video.id}`)}
+            >
+              Modifier
+            </button>
+            <button className="button" type="button">
+              Supprimer
+            </button>
+          </div>
         </div>
       ))}
     </div>

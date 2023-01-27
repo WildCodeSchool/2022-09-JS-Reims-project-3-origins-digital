@@ -22,7 +22,7 @@ export default function AdminMenu() {
             textDecoration: "none",
           })}
         >
-          Video
+          <h2 className="border-category2">Vidéos</h2>
         </NavLink>
         <h2 className="border-category2">Utilisateurs</h2>
         <NavLink
