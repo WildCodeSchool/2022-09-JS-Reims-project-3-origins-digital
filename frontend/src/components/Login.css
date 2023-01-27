@@ -7,7 +7,7 @@
 }
 
 .logo_connect {
-  margin-top: 8rem;
+  margin-top: 5rem;
   width: 12rem;
   height: auto;
   margin-bottom: 2rem;
@@ -46,12 +46,8 @@
   width: 10rem;
 }
 
-.logo_origins {
-  width: 75%;
-  height: auto;
-}
-
 .Logo_content {
+  width: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
