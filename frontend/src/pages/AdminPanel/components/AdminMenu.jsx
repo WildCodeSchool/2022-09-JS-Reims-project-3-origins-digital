@@ -25,68 +25,10 @@ export default function AdminMenu() {
           <h2 className="border-category2">Vidéos</h2>
         </NavLink>
         <h2 className="border-category2">Utilisateurs</h2>
-        <NavLink
-          className="category-menu"
-          to="/admin/users/members"
-          style={({ isActive }) => ({
-            color: isActive ? "yellow" : "white",
-            textDecoration: "none",
-          })}
-        >
-          Membres
-        </NavLink>
-        <NavLink
-          className="category-menu"
-          to="/admin/users/administrators"
-          style={({ isActive }) => ({
-            color: isActive ? "yellow" : "white",
-            textDecoration: "none",
-          })}
-        >
-          Administrateurs
-        </NavLink>
+
         <h2 className="border-category2">Pages</h2>
-        <NavLink
-          className="category-menu"
-          to="/admin/pages/modify"
-          style={({ isActive }) => ({
-            color: isActive ? "yellow" : "white",
-            textDecoration: "none",
-          })}
-        >
-          Modifier
-        </NavLink>
-        <NavLink
-          className="category-menu"
-          to="/admin/pages/upload"
-          style={({ isActive }) => ({
-            color: isActive ? "yellow" : "white",
-            textDecoration: "none",
-          })}
-        >
-          Ajouter
-        </NavLink>
+
         <h2 className="border-category2">Sections</h2>
-        <NavLink
-          className="category-menu"
-          to="/admin/sections/modify"
-          style={({ isActive }) => ({
-            color: isActive ? "yellow" : "white",
-            textDecoration: "none",
-          })}
-        >
-          Modifier
-        </NavLink>
-        <NavLink
-          className="category-menu"
-          to="/admin/sections/upload"
-          style={({ isActive }) => ({
-            color: isActive ? "yellow" : "white",
-            textDecoration: "none",
-          })}
-        >
-          Ajouter
-        </NavLink>
       </nav>
     </div>
   );

@@ -1,5 +1,5 @@
 .title-vm {
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   color: orange;
   display: flex;
   flex-direction: row;
@@ -37,7 +37,8 @@
   width: 15vw;
 }
 
-input, textarea {
+input,
+textarea {
   text-indent: 0.5rem;
 }
 
@@ -58,14 +59,15 @@ input, textarea {
 }
 
 .modify-video {
-  background-color: #28B463;
+  background-color: #28b463;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -85,14 +87,15 @@ input, textarea {
 }
 
 .delete-video {
-  background-color: #BD0000FF;
+  background-color: #bd0000ff;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;

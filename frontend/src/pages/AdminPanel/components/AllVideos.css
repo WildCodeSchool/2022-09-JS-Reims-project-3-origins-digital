@@ -1,12 +1,21 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("../../../fonts/Gilroy-ExtraBold.otf") format("truetype");
+}
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("../../../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
 .video_grid {
   margin: 2rem;
 }
 
-h1 {
+.video_name {
   font-size: 1rem;
 }
 
-.thumbnail {
+.thumbnail_admin {
   width: 10vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -40,5 +49,18 @@ h1 {
 }
 
 .button {
-  margin-bottom: 0.5rem;
+  font-family: "Open Sans Light", sans-serif;
+  font-size: medium;
+  margin: 0.5rem 0 0.5rem 0;
+  color: #ff680a;
+  background: none;
+  border-radius: 30px;
+  border: 2px solid #ff680a;
+  height: 2.5rem;
+  width: 10rem;
+}
+
+.button:hover {
+  background: #ff680a;
+  color: black;
 }

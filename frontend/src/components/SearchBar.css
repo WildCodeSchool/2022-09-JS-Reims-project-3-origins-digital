@@ -12,24 +12,24 @@
   width: 100%;
   height: 2rem;
   border-radius: 0.7rem;
-  color:black;
+  color: black;
   padding: 0.2rem;
 }
 
-.results a{
-  color:#f0f0f0;
+.results a {
+  color: #f0f0f0;
   text-decoration: none;
 }
 
-.searchBtn{
+.searchBtn {
   height: 2rem;
   border-radius: 0.7rem;
   color: black;
 }
 
-.results{
+.results {
   margin: 3rem;
 }
-.results p{
-  margin:1rem;
+.results p {
+  margin: 1rem;
 }
