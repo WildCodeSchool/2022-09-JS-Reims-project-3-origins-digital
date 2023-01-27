@@ -59,15 +59,13 @@ export default function VideoPage() {
               <h3 className="subtitleInfos">French, English, Spanish</h3>
             </div>
             <hr className="barre" />
-            <div className="carousel_videopage">
-              <VideoCarousel
-                title={categoryVideo.category_name}
-                videos={videos.filter(
-                  (clip) => clip.category_id === categoryVideo.id
-                )}
-                category={categoryVideo}
-              />
-            </div>
+            <VideoCarousel
+              title={categoryVideo.category_name}
+              videos={videos.filter(
+                (clip) => clip.category_id === categoryVideo.id
+              )}
+              category={categoryVideo}
+            />
           </div>
         </div>
       </div>
