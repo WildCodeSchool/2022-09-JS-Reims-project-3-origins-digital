@@ -1,6 +1,7 @@
 import "./VideoCarousel.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { AiFillLock } from "react-icons/ai";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/ContextAuth";
 
@@ -20,7 +21,7 @@ export default function VideoCarousel({ title, videos }) {
             <div className="Link-video">
               {!auth.isAuthenticated && getRandomInt(3) === 0 ? (
                 <Link to="/login">
-                  <img className="lock" src="/src/assets/lock.png" alt="lock" />
+                  <AiFillLock className="lock" alt="lock" />
                 </Link>
               ) : (
                 <Link to={`/videos/${video.id}`}>
