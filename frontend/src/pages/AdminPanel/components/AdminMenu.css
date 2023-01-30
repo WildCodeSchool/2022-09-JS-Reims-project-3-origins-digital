@@ -10,7 +10,7 @@
 .admin-menu {
   background-color: #333333;
   border-right: 0.188rem solid #ff680a;
-  height: auto;
+  height: 100vw;
   width: 20vw;
   font-family: "Gilroy", sans-serif;
 }

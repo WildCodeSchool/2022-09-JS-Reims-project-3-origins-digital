@@ -1,0 +1,13 @@
+.allUsers {
+  display: flex;
+}
+.boxUser {
+  display: flex;
+}
+
+select {
+  height: 1rem;
+}
+td {
+  color: white;
+}
