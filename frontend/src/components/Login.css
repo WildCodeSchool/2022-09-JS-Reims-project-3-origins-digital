@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 1rem;
+
 }
 
 .logo_connect {
@@ -13,6 +13,18 @@
   margin-bottom: 2rem;
 }
 
+.Logo_content {
+  width: 10rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.logo_origins{
+  width: 15rem;
+}
 .password_box {
   position: relative;
   margin-top: 1.5rem;
@@ -46,12 +58,6 @@
   width: 10rem;
 }
 
-.Logo_content {
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .form_login {
   display: flex;
   flex-direction: column;
@@ -65,5 +71,12 @@
 @media screen and (min-width: 700px) {
   .logo_origins {
     width: 40%;
+  }
+
+  .Logo_content {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
