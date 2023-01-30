@@ -1,74 +1,89 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/ContextAuth";
+import "./FormEditVideo.css";
 
 export default function FormEditVideo() {
   const { id } = useParams();
   const { auth } = useContext(AuthContext);
-  const [formData, setFormData] = useState({
-    title: "",
+
+  const [title, setTitle] = useState({ title: "" });
+  const [descriptionVideo, setDescriptionVideo] = useState({
     description_video: "",
-    publication_date: "",
-    link: "",
-    thumbnail: "",
-    category_id: "",
   });
+  const [publicationDate, setPublicationDate] = useState({
+    publication_date: "",
+  });
+  const [link, setLink] = useState({ link: "" });
+  const [thumbnail, setThumbnail] = useState({ thumbnail: "" });
+  const [categoryId, setCategoryId] = useState({ category_id: "" });
   const [submitionStatus, setSubmitionStatus] = useState("");
-  const url = `${import.meta.env.VITE_BACKEND_URL}/videos/${id}`;
+  const titleRef = useRef();
+  const descriptionVideoRef = useRef();
+  const publicationDateRef = useRef();
+  const linkRef = useRef();
+  const thumbnailRef = useRef();
+  const categoryIdRef = useRef();
+  const [date, setDate] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-          "Content-Type": "application/json",
-        },
+    setDate(new Date(publicationDate).toLocaleDateString("en-US"));
+  }, [publicationDate]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/videos/${id}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${auth.token}` },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setTitle(data.title);
+        setDescriptionVideo(data.description_video);
+        setPublicationDate(data.publication_date);
+        setLink(data.link);
+        setThumbnail(data.thumbnail);
+        setCategoryId(data.category_id);
+      })
+      .catch((err) => {
+        console.warn(err);
       });
-      const data = await response.json();
-      setFormData(data);
+  }, []);
+
+  const handleSubmit = () => {
+    const dataPost = {
+      title: titleRef.current.value,
+      description_video: descriptionVideoRef.current.value,
+      publication_date: publicationDateRef.current.value,
+      link: linkRef.current.value,
+      thumbnail: thumbnailRef.current.value,
+      category_id: categoryIdRef.current.value,
     };
-    fetchData();
-  }, [auth.isAuthenticated]);
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Envoi des données modifiées à la base de données pour mise à jour
-    fetch(url, {
+    fetch(`http://localhost:5000/videos/${id}`, {
       method: "PUT",
       headers: {
-        Authorization: `Bearer ${auth.token}`,
         "Content-Type": "application/json",
+        Authorization: `Bearer ${auth.token}`,
       },
-      body: JSON.stringify({
-        title: formData.title,
-        description_video: formData.description_video,
-        publication_date: formData.publication_date,
-        link: formData.link,
-        thumbnail: formData.thumbnail,
-        category_id: formData.category_id,
-      }),
+      body: JSON.stringify(dataPost),
     })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.status === 204) {
-          setSubmitionStatus("Modifications enregistrées !");
-        }
+      .then((res) => {
+        setSubmitionStatus("modif");
+        console.warn(res);
       })
-      .catch((error) => {
-        console.error("Erreur lors de la mise à jour des données", error);
+      .catch((err) => {
+        console.warn(err);
       });
   };
   return (
     <div className="formEdit">
-      <form className="form" onSubmit={handleSubmit}>
+      <form
+        className="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+      >
         <section className="videoData">
           <div>
             <label htmlFor="title">Titre</label>
@@ -76,8 +91,9 @@ export default function FormEditVideo() {
               id="title"
               type="text"
               name="title"
-              value={formData.title}
-              onChange={handleChange}
+              ref={titleRef}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div>
@@ -86,8 +102,9 @@ export default function FormEditVideo() {
               id="description_video"
               type="text"
               name="description_video"
-              value={formData.description_video}
-              onChange={handleChange}
+              ref={descriptionVideoRef}
+              value={descriptionVideo}
+              onChange={(e) => setDescriptionVideo(e.target.value)}
             />
           </div>
           <div>
@@ -96,8 +113,9 @@ export default function FormEditVideo() {
               id="publication_date"
               type="text"
               name="publication_date"
-              value={formData.publication_date}
-              onChange={handleChange}
+              ref={publicationDateRef}
+              value={date}
+              onChange={(e) => setPublicationDate(e.target.value)}
             />
           </div>
           <div>
@@ -106,8 +124,9 @@ export default function FormEditVideo() {
               id="link"
               type="text"
               name="link"
-              value={formData.link}
-              onChange={handleChange}
+              ref={linkRef}
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
             />
           </div>
           <div>
@@ -116,8 +135,9 @@ export default function FormEditVideo() {
               id="thumbnail"
               type="text"
               name="thumbnail"
-              value={formData.thumbnail}
-              onChange={handleChange}
+              ref={thumbnailRef}
+              value={thumbnail}
+              onChange={(e) => setThumbnail(e.target.value)}
             />
           </div>
           <div>
@@ -126,15 +146,14 @@ export default function FormEditVideo() {
               id="category_id"
               type="text"
               name="category_id"
-              value={formData.category_id}
-              onChange={handleChange}
+              ref={categoryIdRef}
+              value={categoryId}
+              onChange={(e) => setCategoryId(e.target.value)}
             />
           </div>
         </section>
         <div className="register_button">
-          <button className="submitButton" type="submit">
-            Enregistrer les modifications
-          </button>
+          <input className="submitButton" type="submit" value="Modifier" />
           <p>{submitionStatus}</p>
         </div>
       </form>
