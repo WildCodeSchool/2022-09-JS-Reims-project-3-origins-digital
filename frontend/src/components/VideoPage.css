@@ -131,7 +131,21 @@
   border: 1px solid #94b1d4;
   border-radius: 30%;
 }
+.scroll {
+  scroll-snap-type: x;
+  overflow-x: scroll;
+  display: flex;
+  align-items: top;
+  color: white;
+}
+.section-video {
+  width: 100vw;
+}
 
+.favorite{
+  width: 2rem;
+  height: 2rem;
+}
 @media screen and (min-width: 800px) {
   .video {
     height: auto;
@@ -145,7 +159,9 @@
     justify-content: center;
     align-items: center;
   }
-
+  .scroll {
+    scroll-snap-type: initial;
+  }
   .video-player {
     display: flex;
     justify-content: center;
