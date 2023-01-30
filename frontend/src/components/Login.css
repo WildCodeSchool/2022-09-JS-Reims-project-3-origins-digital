@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .logo_connect {
@@ -22,7 +21,7 @@
   margin-top: 1rem;
 }
 
-.logo_origins{
+.logo_origins {
   width: 15rem;
 }
 .password_box {
