@@ -7,7 +7,6 @@ import "./AllVideos.css";
 export default function VideosByCategory() {
   const navigate = useNavigate();
   const { videos } = useContext(VideoContext);
-  const videos = useContext(VideoContext);
   const { auth } = useContext(AuthContext);
   const deleteVideo = (video) => {
     const { id } = video;
@@ -25,9 +24,6 @@ export default function VideosByCategory() {
         console.warn(err);
       });
   };
-
-
-
 
   return (
     <div className="video_grid">
