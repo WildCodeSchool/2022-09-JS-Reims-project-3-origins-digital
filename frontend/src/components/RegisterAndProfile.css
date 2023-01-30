@@ -29,7 +29,15 @@
   border: 2px solid #ff680a;
   height: 2rem;
   width: 10rem;
+  cursor: pointer;
 }
+
+.register_btn:hover {
+  color: #FFFFFF;
+  border: 2px solid #ffffff;
+  transition: 0.7s;
+}
+
 .password_box_register {
   position: relative;
 }
