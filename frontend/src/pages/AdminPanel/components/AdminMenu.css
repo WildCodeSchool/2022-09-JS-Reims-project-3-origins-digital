@@ -9,10 +9,11 @@
 
 .admin-menu {
   border-right: 0.188rem solid #ff680a;
-  position:fixed;
-  width: 20vw;
-  height: 100vh;
   font-family: "Gilroy", sans-serif;
+}
+
+h1{
+  white-space: nowrap;
 }
 
 h2 {
@@ -24,9 +25,8 @@ h2 {
 }
 
 .border-header {
-  padding-left: 1.5rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .title {
