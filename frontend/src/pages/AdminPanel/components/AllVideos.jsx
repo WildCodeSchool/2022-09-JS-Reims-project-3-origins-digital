@@ -1,11 +1,29 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contexts/ContextAuth";
 import VideoContext from "../../../contexts/ContextVideos";
 import "./AllVideos.css";
 
 export default function VideosByCategory() {
   const navigate = useNavigate();
   const videos = useContext(VideoContext);
+  const { auth } = useContext(AuthContext);
+  const deleteVideo = (video) => {
+    const { id } = video;
+    fetch(`http://localhost:5000/videos/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${auth.token}` },
+    })
+      .then((res) => {
+        if (res.status === 204) {
+          alert("Votre Vidéo a bien été supprimée");
+        }
+        console.warn(res);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  };
 
   return (
     <div className="video_grid">
@@ -25,7 +43,13 @@ export default function VideosByCategory() {
             >
               Modifier
             </button>
-            <button className="button" type="button">
+            <button
+              className="button"
+              type="button"
+              onClick={() => {
+                deleteVideo(video);
+              }}
+            >
               Supprimer
             </button>
           </div>
