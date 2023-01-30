@@ -14,7 +14,12 @@ INSERT INTO user (firstname, lastname, username, email, hashedPassword, role)
 VALUES ('Charlotte', 'Kieffer', 'Cha', 'kindred242@gmail.com',
 		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin'),
 		('Romain', 'Bronquard', 'DarkOviS', 'romain.bronquard@gmail.com',
-		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin');
+		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin'),
+		('Hugo', 'Rodriguez', 'Yhugzee', 'rodriguez.h@pm.me',
+		 '$argon2id$v=19$m=65536,t=5,p=1$a/ScopyVE0Dr9uik/OXnQw$nDg+1gIMpK+eEXfUAr9JGNtVc0CPFhSzayTaCOLWIMc', 'admin'),
+		('John', 'Doe', 'Jodoe', 'john@doe.com',
+		 '$argon2id$v=19$m=65536,t=5,p=1$xutodeAMLAkk9Y9h1yvkPQ$LT3tDHDiCsovwwXwMuzzo58r5k3OoXEfcRTsOR3075Q', 'free');
+
 
 CREATE TABLE category
 (
