@@ -8,10 +8,10 @@
 }
 
 .admin-menu {
-  background-color: #333333;
   border-right: 0.188rem solid #ff680a;
-  height: auto;
+  position:fixed;
   width: 20vw;
+  height: 100vh;
   font-family: "Gilroy", sans-serif;
 }
 
@@ -54,7 +54,7 @@ h2 {
 }
 
 .border-category2 {
-  color: #94b1d4;
+  color:white;
   margin-top: 2.188rem;
   display: flex;
 }
