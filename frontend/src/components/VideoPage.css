@@ -141,6 +141,11 @@
 .section-video {
   width: 100vw;
 }
+
+.favorite{
+  width: 2rem;
+  height: 2rem;
+}
 @media screen and (min-width: 800px) {
   .video {
     height: auto;
