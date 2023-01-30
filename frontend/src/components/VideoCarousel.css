@@ -38,6 +38,14 @@ hr {
   border: 1px solid #94b1d4;
   border-radius: 30%;
 }
+.lock {
+  width: 10rem;
+  height: auto;
+}
+.Link-video {
+  display: flex;
+  justify-content: center;
+}
 @media screen and (min-width: 992px) {
   .scroll {
     scroll-snap-type: initial;

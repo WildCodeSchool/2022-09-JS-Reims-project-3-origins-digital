@@ -11,13 +11,17 @@ export default function VideosByCategory() {
     <div className="video_grid">
       {videos.map((video) => (
         <div className="video_tile">
-          <img src={video.thumbnail} alt={video.title} className="thumbnail" />
+          <img
+            src={video.thumbnail}
+            alt={video.title}
+            className="thumbnail_admin"
+          />
           <h1 className="video_name">{video.title}</h1>
           <div className="buttons">
             <button
               className="button"
               type="button"
-              onClick={() => navigate(`/admin/videos/${video.id}`)}
+              onClick={() => navigate(`./edit/${video.id}`)}
             >
               Modifier
             </button>
