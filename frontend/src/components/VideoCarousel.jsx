@@ -7,18 +7,14 @@ import { AuthContext } from "../contexts/ContextAuth";
 export default function VideoCarousel({ title, videos }) {
   const { auth } = useContext(AuthContext);
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
   return (
     <section className="section-video">
       <h1>{title}</h1>
       <div className="scroll">
-        {videos.map((video) => (
+        {videos.map((video, index) => (
           <figure key={video.id}>
             <div className="Link-video">
-              {!auth.isAuthenticated && getRandomInt(3) === 0 ? (
+              {!auth.isAuthenticated && index % 7 === 4 ? (
                 <Link to="/login">
                   <img className="lock" src="/src/assets/lock.png" alt="lock" />
                 </Link>
