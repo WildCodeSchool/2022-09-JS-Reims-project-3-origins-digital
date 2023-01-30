@@ -1,34 +1,20 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { useParams } from "react-router-dom";
+import VideoContext from "../../../contexts/ContextVideos";
 import { AuthContext } from "../../../contexts/ContextAuth";
 import "./FormEditVideo.css";
 
 export default function FormEditVideo() {
   const { id } = useParams();
   const { auth } = useContext(AuthContext);
+  const { updateVideo } = useContext(VideoContext);
 
-  const [title, setTitle] = useState({ title: "" });
-  const [descriptionVideo, setDescriptionVideo] = useState({
-    description_video: "",
-  });
-  const [publicationDate, setPublicationDate] = useState({
-    publication_date: "",
-  });
-  const [link, setLink] = useState({ link: "" });
-  const [thumbnail, setThumbnail] = useState({ thumbnail: "" });
-  const [categoryId, setCategoryId] = useState({ category_id: "" });
   const [submitionStatus, setSubmitionStatus] = useState("");
   const titleRef = useRef();
   const descriptionVideoRef = useRef();
-  const publicationDateRef = useRef();
   const linkRef = useRef();
   const thumbnailRef = useRef();
   const categoryIdRef = useRef();
-  const [date, setDate] = useState("");
-
-  useEffect(() => {
-    setDate(new Date(publicationDate).toLocaleDateString("en-US"));
-  }, [publicationDate]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/videos/${id}`, {
@@ -37,23 +23,22 @@ export default function FormEditVideo() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setTitle(data.title);
-        setDescriptionVideo(data.description_video);
-        setPublicationDate(data.publication_date);
-        setLink(data.link);
-        setThumbnail(data.thumbnail);
-        setCategoryId(data.category_id);
+        titleRef.current.value = data.title;
+        descriptionVideoRef.current.value = data.description_video;
+        linkRef.current.value = data.link;
+        thumbnailRef.current.value = data.thumbnail;
+        categoryIdRef.current.value = data.category_id;
       })
       .catch((err) => {
         console.warn(err);
       });
-  }, []);
+  }, [id]);
 
   const handleSubmit = () => {
     const dataPost = {
+      id: parseInt(id, 10),
       title: titleRef.current.value,
       description_video: descriptionVideoRef.current.value,
-      publication_date: publicationDateRef.current.value,
       link: linkRef.current.value,
       thumbnail: thumbnailRef.current.value,
       category_id: categoryIdRef.current.value,
@@ -69,6 +54,7 @@ export default function FormEditVideo() {
     })
       .then((res) => {
         setSubmitionStatus("modif");
+        updateVideo(dataPost);
         console.warn(res);
       })
       .catch((err) => {
@@ -87,14 +73,7 @@ export default function FormEditVideo() {
         <section className="videoData">
           <div>
             <label htmlFor="title">Titre</label>
-            <input
-              id="title"
-              type="text"
-              name="title"
-              ref={titleRef}
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
+            <input id="title" type="text" name="title" ref={titleRef} />
           </div>
           <div>
             <label htmlFor="description_video">Description</label>
@@ -103,31 +82,11 @@ export default function FormEditVideo() {
               type="text"
               name="description_video"
               ref={descriptionVideoRef}
-              value={descriptionVideo}
-              onChange={(e) => setDescriptionVideo(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="publication_date">Date de publication</label>
-            <input
-              id="publication_date"
-              type="text"
-              name="publication_date"
-              ref={publicationDateRef}
-              value={date}
-              onChange={(e) => setPublicationDate(e.target.value)}
             />
           </div>
           <div>
             <label htmlFor="link">Lien de la vidéo</label>
-            <input
-              id="link"
-              type="text"
-              name="link"
-              ref={linkRef}
-              value={link}
-              onChange={(e) => setLink(e.target.value)}
-            />
+            <input id="link" type="text" name="link" ref={linkRef} />
           </div>
           <div>
             <label htmlFor="thumbnail">Miniature</label>
@@ -136,8 +95,6 @@ export default function FormEditVideo() {
               type="text"
               name="thumbnail"
               ref={thumbnailRef}
-              value={thumbnail}
-              onChange={(e) => setThumbnail(e.target.value)}
             />
           </div>
           <div>
@@ -147,8 +104,6 @@ export default function FormEditVideo() {
               type="text"
               name="category_id"
               ref={categoryIdRef}
-              value={categoryId}
-              onChange={(e) => setCategoryId(e.target.value)}
             />
           </div>
         </section>

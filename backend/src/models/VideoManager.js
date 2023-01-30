@@ -21,11 +21,10 @@ class VideoManager extends AbstractManager {
 
   update(video) {
     return this.connection.query(
-      `update ${this.table} set title = ?, description_video = ?, publication_date = ?, link = ?, thumbnail = ?, category_id = ? where id = ?`,
+      `update ${this.table} set title = ?, description_video = ?, link = ?, thumbnail = ?, category_id = ? where id = ?`,
       [
         video.title,
         video.description_video,
-        video.publication_date,
         video.link,
         video.thumbnail,
         video.category_id,

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 
 const VideoContext = createContext();
 
@@ -19,8 +19,25 @@ export function VideoContextProvider({ children }) {
         console.warn(err);
       });
   }, []);
+
+  const updateVideo = (video) => {
+    setVideos(
+      videos.map((oldVideo) => (oldVideo.id === video.id ? video : oldVideo))
+    );
+  };
+
+  const memoizedValue = useMemo(
+    () => ({
+      videos,
+      updateVideo,
+    }),
+    [videos, updateVideo]
+  );
+
   return (
-    <VideoContext.Provider value={videos}>{children}</VideoContext.Provider>
+    <VideoContext.Provider value={memoizedValue}>
+      {children}
+    </VideoContext.Provider>
   );
 }
 VideoContextProvider.propTypes = {
