@@ -9,10 +9,6 @@ export default function Profile() {
   const [showPassword, setShowPassword] = useState("password");
   const [update, setUpdate] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState("password");
-  const [firstname, setFirstname] = useState({ firstname: "" });
-  const [lastname, setLastname] = useState({ lastname: "" });
-  const [username, setUsername] = useState({ username: "" });
-  const [email, setEmail] = useState({ email: "" });
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const userNameRef = useRef();
@@ -25,10 +21,10 @@ export default function Profile() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setEmail(data.email);
-        setFirstname(data.firstname);
-        setLastname(data.lastname);
-        setUsername(data.username);
+        firstNameRef.current.value = data.firstname;
+        lastNameRef.current.value = data.lastname;
+        userNameRef.current.value = data.username;
+        emailRef.current.value = data.email;
       })
       .catch((err) => {
         console.warn(err);
@@ -74,32 +70,24 @@ export default function Profile() {
             placeholder="Prénom"
             className="firstname"
             ref={firstNameRef}
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
           />
           <input
             type="text"
             placeholder="Nom"
             className="lastname"
             ref={lastNameRef}
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
           />
           <input
             type="text"
             placeholder="Pseudo"
             className="username_register"
             ref={userNameRef}
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
           />
           <input
             type="email"
             placeholder="Email"
             className="email"
             ref={emailRef}
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
           />
           <div className="password_box_register">
             {showPassword === "password" ? (
