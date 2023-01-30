@@ -42,6 +42,9 @@ hr {
   width: 10rem;
   height: auto;
 }
+.lock:hover{
+  color: #ff680a;
+}
 .Link-video {
   display: flex;
   justify-content: center;

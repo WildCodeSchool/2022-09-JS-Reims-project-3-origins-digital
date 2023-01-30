@@ -10,7 +10,7 @@ import "./VideoCarousel.css";
 
 export default function VideoPage() {
   const { id } = useParams();
-  const videos = useContext(VideoContext);
+  const { videos } = useContext(VideoContext);
   const categories = useContext(CategoryContext);
   const [favorite, setFavorite] = useState(false);
   const handleClick = () => {
