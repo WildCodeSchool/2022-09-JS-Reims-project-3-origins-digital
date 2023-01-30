@@ -4,7 +4,7 @@ import VideoContext from "../contexts/ContextVideos";
 import CategoryContext from "../contexts/ContextCategory";
 
 export default function VideosByCategory() {
-  const videos = useContext(VideoContext);
+  const { videos } = useContext(VideoContext);
   const category = useContext(CategoryContext);
   return (
     <>

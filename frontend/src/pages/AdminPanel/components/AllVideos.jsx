@@ -5,7 +5,7 @@ import "./AllVideos.css";
 
 export default function VideosByCategory() {
   const navigate = useNavigate();
-  const videos = useContext(VideoContext);
+  const { videos } = useContext(VideoContext);
 
   return (
     <div className="video_grid">
@@ -21,7 +21,7 @@ export default function VideosByCategory() {
             <button
               className="button"
               type="button"
-              onClick={() => navigate(`./edit/${video.id}`)}
+              onClick={() => navigate(`./${video.id}`)}
             >
               Modifier
             </button>
