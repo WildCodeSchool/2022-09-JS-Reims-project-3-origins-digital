@@ -8,6 +8,7 @@ export default function AllUsers() {
   const [takeData, setTakeData] = useState({});
   const [users, setUsers] = useState([]);
   const [roleChange, setRoleChange] = useState(false);
+
   useEffect(() => {
     fetch(`http://localhost:5000/users`, {
       method: "GET",
@@ -31,7 +32,7 @@ export default function AllUsers() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${auth.token}`,
       },
-      body: JSON.stringify({ role: takeData[user.id] }),
+      body: JSON.stringify({ id: user.id, role: takeData[user.id] }),
     })
       .then((res) => {
         console.warn(res);
@@ -58,22 +59,14 @@ export default function AllUsers() {
                   <td>{user.email}</td>
                   <td>
                     <select
+                      value={takeData[user.id] || user.role}
                       name="role"
                       onChange={(e) => {
                         handleChange(e, user);
                       }}
                     >
-                      {auth.role === "admin" ? (
-                        <>
-                          <option value={auth.role}>{auth.role}</option>
-                          <option value="visitor">visitor</option>
-                        </>
-                      ) : (
-                        <>
-                          <option value={auth.role}>{auth.role}</option>
-                          <option value="admin">admin</option>
-                        </>
-                      )}
+                      <option value="admin">Admin</option>
+                      <option value="visitor">Visitor</option>
                     </select>
                   </td>
                   <td>
@@ -88,9 +81,9 @@ export default function AllUsers() {
                 </tr>
               </tbody>
             </table>
-            <p>{roleChange}</p>
           </div>
         ))}
+        {roleChange && <p className="RoleModifié">Rôle modifié</p>}
       </div>
     </div>
   );
