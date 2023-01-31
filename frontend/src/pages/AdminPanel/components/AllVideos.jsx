@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import VideoContext from "../../../contexts/ContextVideos";
 import "./AllVideos.css";
 
@@ -9,6 +9,11 @@ export default function VideosByCategory() {
 
   return (
     <div className="video_grid">
+      <Link to="/admin/video/upload">
+        <button className="button_upload" type="button">
+          Ajouter une vidéo
+        </button>
+      </Link>
       {videos.map((video) => (
         <div className="video_tile">
           <img
