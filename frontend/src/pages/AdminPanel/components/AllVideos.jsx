@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import { AiFillEdit } from "react-icons/ai";
+import { RiDeleteBin5Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/ContextAuth";
 import VideoContext from "../../../contexts/ContextVideos";
@@ -41,7 +43,7 @@ export default function VideosByCategory() {
               type="button"
               onClick={() => navigate(`./${video.id}`)}
             >
-              Modifier
+              <AiFillEdit className="edit_button" />
             </button>
             <button
               className="button"
@@ -51,6 +53,8 @@ export default function VideosByCategory() {
               }}
             >
               Supprimer
+            <button className="button" type="button">
+              <RiDeleteBin5Line className="delete_button" />
             </button>
           </div>
         </div>
