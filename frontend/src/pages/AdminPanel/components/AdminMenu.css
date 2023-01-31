@@ -8,11 +8,13 @@
 }
 
 .admin-menu {
-  background-color: #333333;
   border-right: 0.188rem solid #ff680a;
-  height: 100vw;
-  width: 20vw;
+  height: 100vh;
   font-family: "Gilroy", sans-serif;
+}
+
+h1 {
+  white-space: nowrap;
 }
 
 h2 {
@@ -24,9 +26,8 @@ h2 {
 }
 
 .border-header {
-  padding-left: 1.5rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .title {
@@ -54,7 +55,7 @@ h2 {
 }
 
 .border-category2 {
-  color: #94b1d4;
+  color: white;
   margin-top: 2.188rem;
   display: flex;
 }
@@ -65,4 +66,7 @@ h2 {
 
 .border-category2:visited {
   color: #ff680a;
+}
+a {
+  text-decoration: none;
 }
