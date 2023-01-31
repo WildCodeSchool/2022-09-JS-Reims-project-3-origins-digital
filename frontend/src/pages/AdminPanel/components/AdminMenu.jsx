@@ -6,7 +6,11 @@ export default function AdminMenu() {
   return (
     <div className="admin-menu">
       <Link to="/">
-        <p className="back">Retour au site</p>
+        <img
+          src="/src/assets/OriginsLogo.png"
+          alt="originslogo"
+          className="logo"
+        />
       </Link>
       <div className="border-header">
         <Link style={{ textDecoration: "none" }} to="/admin">

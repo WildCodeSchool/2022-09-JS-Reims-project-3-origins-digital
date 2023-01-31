@@ -28,8 +28,8 @@
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: 1px solid #ff680a;
-  border-radius: 10px;
+  border-bottom: 1px solid #ff680a;
+  padding-bottom: 1rem;;
   margin-bottom: 1rem;
 }
 
@@ -52,15 +52,21 @@
   font-family: "Open Sans Light", sans-serif;
   font-size: medium;
   margin: 0.5rem 0 0.5rem 0;
-  color: #ff680a;
+  color: white;
   background: none;
-  border-radius: 30px;
-  border: 2px solid #ff680a;
   height: 2.5rem;
   width: 10rem;
 }
 
-.button:hover {
-  background: #ff680a;
-  color: black;
+.edit_button, .delete_button{
+width: 2rem;
+height:2rem;
+}
+
+.edit_button:hover{
+  color:green;
+}
+
+.delete_button:hover{
+  color:red;
 }

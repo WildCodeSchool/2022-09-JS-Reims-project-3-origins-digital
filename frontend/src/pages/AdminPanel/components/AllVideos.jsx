@@ -1,19 +1,16 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { AiFillEdit } from "react-icons/ai";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import VideoContext from "../../../contexts/ContextVideos";
 import "./AllVideos.css";
 
 export default function VideosByCategory() {
   const navigate = useNavigate();
-  const videos = useContext(VideoContext);
+  const { videos } = useContext(VideoContext);
 
   return (
     <div className="video_grid">
-      <Link to="/admin/video/upload">
-        <button className="button_upload" type="button">
-          Ajouter une vidéo
-        </button>
-      </Link>
       {videos.map((video) => (
         <div className="video_tile">
           <img
@@ -26,12 +23,12 @@ export default function VideosByCategory() {
             <button
               className="button"
               type="button"
-              onClick={() => navigate(`./edit/${video.id}`)}
+              onClick={() => navigate(`./${video.id}`)}
             >
-              Modifier
+              <AiFillEdit className="edit_button" />
             </button>
             <button className="button" type="button">
-              Supprimer
+              <RiDeleteBin5Line className="delete_button" />
             </button>
           </div>
         </div>
