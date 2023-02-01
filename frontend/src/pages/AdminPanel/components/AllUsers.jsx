@@ -46,43 +46,41 @@ export default function AllUsers() {
   return (
     <div className="allUsers">
       <AdminMenu />
-      <div>
-        {users.map((user) => (
-          <div className="boxUser">
-            <table className="table">
-              <tbody>
-                <tr>
-                  <td>{user.id}</td>
-                  <td>{user.firstname}</td>
-                  <td>{user.lastname}</td>
-                  <td>{user.username}</td>
-                  <td>{user.email}</td>
-                  <td>
-                    <select
-                      value={takeData[user.id] || user.role}
-                      name="role"
-                      onChange={(e) => {
-                        handleChange(e, user);
-                      }}
-                    >
-                      <option value="admin">Admin</option>
-                      <option value="visitor">Visitor</option>
-                    </select>
-                  </td>
-                  <td>
-                    <button
-                      type="button"
-                      className="register_btn"
-                      onClick={() => handleUpdateClick(user)}
-                    >
-                      Modifier
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        ))}
+      <div className="boxUser">
+        <table className="table">
+          <tbody>
+            {users.map((user) => (
+              <tr className="borderTd">
+                <td>{user.id}</td>
+                <td>{user.firstname}</td>
+                <td>{user.lastname}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                <td>
+                  <select
+                    value={takeData[user.id] || user.role}
+                    name="role"
+                    onChange={(e) => {
+                      handleChange(e, user);
+                    }}
+                  >
+                    <option value="admin">Admin</option>
+                    <option value="visitor">Visitor</option>
+                  </select>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    className="allUsers_btn"
+                    onClick={() => handleUpdateClick(user)}
+                  >
+                    Modifier
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         {roleChange && <p className="RoleModifié">Rôle modifié</p>}
       </div>
     </div>

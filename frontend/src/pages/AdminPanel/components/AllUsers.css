@@ -1,8 +1,14 @@
 .allUsers {
   display: flex;
+  height: 100vh;
+  flex: 1;
+}
+.borderTd td {
+  border-bottom: 1px solid #ff680a;
 }
 .boxUser {
   display: flex;
+  flex: 1;
 }
 
 select {
@@ -10,7 +16,27 @@ select {
 }
 td {
   color: white;
+  padding: 1rem;
 }
+tr {
+  border-bottom: 1px solid #ff680a;
+}
+
 .RoleModifié {
   color: #ff680a;
+  align-items: center;
+}
+.allUsers_btn {
+  color: #ff680a;
+  background: none;
+  border-radius: 30px;
+  border: 2px solid #ff680a;
+  height: 2rem;
+  width: 10rem;
+  cursor: pointer;
+}
+.allUsers_btn:hover {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  transition: 0.7s;
 }
