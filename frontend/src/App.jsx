@@ -49,7 +49,7 @@ function App() {
                 <Route path="/admin/videos/modify" element={<VideosModify />} />
                 <Route path="/admin/videos" element={<VideoList />} />
                 <Route path="/admin/videos/:id" element={<VideoEditPage />} />
-                <Route path="/admin/video/upload" element={<UploadVideo />} />
+                <Route path="/admin/videos/upload" element={<UploadVideo />} />
                 <Route path="/profile" element={<Profile />} />
               </Route>
             </Route>
