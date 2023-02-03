@@ -21,6 +21,7 @@ import { AuthContext } from "./contexts/ContextAuth";
 import VideoList from "./pages/AdminPanel/components/VideoList";
 import VideoEditPage from "./pages/AdminPanel/components/VideoEditPage";
 import Profile from "./components/Profile";
+import AllUsers from "./pages/AdminPanel/components/AllUsers";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -49,6 +50,7 @@ function App() {
                 <Route path="/admin/videos" element={<VideoList />} />
                 <Route path="/admin/videos/:id" element={<VideoEditPage />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/admin/users" element={<AllUsers />} />
               </Route>
             </Route>
           </Routes>

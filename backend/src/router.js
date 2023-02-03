@@ -30,6 +30,7 @@ router.use(verifyToken); // authentication wall
 
 router.get("/users/:id", userControllers.getOneUser);
 router.put("/users/:id", hashPassword, userControllers.editUser);
+router.put("/users/role/:id", userControllers.editUserRole);
 
 router.use(verifyAdmin); // admin wall
 
