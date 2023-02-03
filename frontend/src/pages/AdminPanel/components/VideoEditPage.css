@@ -1,3 +1,20 @@
 .container {
   display: flex;
 }
+
+.form-edit {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center ;
+  padding-top: 2rem;
+
+}
+
+label{
+  display:block;
+  color: white;
+  padding: 1rem 0 1rem 0;
+  font-size: larger;
+}

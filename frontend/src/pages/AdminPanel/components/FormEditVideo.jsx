@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { useParams } from "react-router-dom";
 import VideoContext from "../../../contexts/ContextVideos";
 import { AuthContext } from "../../../contexts/ContextAuth";
-import "./FormEditVideo.css";
 
 export default function FormEditVideo() {
   const { id } = useParams();
@@ -15,6 +14,7 @@ export default function FormEditVideo() {
   const linkRef = useRef();
   const thumbnailRef = useRef();
   const categoryIdRef = useRef();
+  const [thumbnail, setThumbnail] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:5000/videos/${id}`, {
@@ -28,6 +28,7 @@ export default function FormEditVideo() {
         linkRef.current.value = data.link;
         thumbnailRef.current.value = data.thumbnail;
         categoryIdRef.current.value = data.category_id;
+        setThumbnail(data.thumbnail);
       })
       .catch((err) => {
         console.warn(err);
@@ -63,6 +64,7 @@ export default function FormEditVideo() {
   };
   return (
     <div className="formEdit">
+      <img src={thumbnail} alt={thumbnail} />
       <form
         className="form"
         onSubmit={(e) => {
@@ -73,12 +75,19 @@ export default function FormEditVideo() {
         <section className="videoData">
           <div>
             <label htmlFor="title">Titre</label>
-            <input id="title" type="text" name="title" ref={titleRef} />
+            <input
+              id="title"
+              className="form-input "
+              type="text"
+              name="title"
+              ref={titleRef}
+            />
           </div>
           <div>
             <label htmlFor="description_video">Description</label>
             <input
               id="description_video"
+              className="form-input "
               type="text"
               name="description_video"
               ref={descriptionVideoRef}
@@ -86,12 +95,19 @@ export default function FormEditVideo() {
           </div>
           <div>
             <label htmlFor="link">Lien de la vidéo</label>
-            <input id="link" type="text" name="link" ref={linkRef} />
+            <input
+              id="link"
+              className="form-input "
+              type="text"
+              name="link"
+              ref={linkRef}
+            />
           </div>
           <div>
             <label htmlFor="thumbnail">Miniature</label>
             <input
               id="thumbnail"
+              className="form-input "
               type="text"
               name="thumbnail"
               ref={thumbnailRef}
@@ -101,6 +117,7 @@ export default function FormEditVideo() {
             <label htmlFor="category_id">Catégorie</label>
             <input
               id="category_id"
+              className="form-input "
               type="text"
               name="category_id"
               ref={categoryIdRef}
