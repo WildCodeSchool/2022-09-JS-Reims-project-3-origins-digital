@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { useContext } from "react";
+import UploadVideo from "@pages/AdminPanel/components/UploadVideo";
 import VideoPage from "./components/VideoPage";
 import Home from "./pages/Home";
 import SearchBar from "./components/SearchBar";
@@ -49,6 +50,7 @@ function App() {
                 <Route path="/admin/videos/modify" element={<VideosModify />} />
                 <Route path="/admin/videos" element={<VideoList />} />
                 <Route path="/admin/videos/:id" element={<VideoEditPage />} />
+                <Route path="/admin/videos/upload" element={<UploadVideo />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/admin/users" element={<AllUsers />} />
               </Route>

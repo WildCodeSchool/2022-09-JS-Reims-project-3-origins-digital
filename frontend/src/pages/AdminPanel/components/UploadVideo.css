@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+}
+
+.upload_infos {
+  margin-top: 3rem;
+  text-align: center;
+  flex: 1;
+}
+
+.upload_form {
+  font-family: "Gilroy", sans-serif;
+  margin-top: 2rem;
+  color: #ffffff;
+}

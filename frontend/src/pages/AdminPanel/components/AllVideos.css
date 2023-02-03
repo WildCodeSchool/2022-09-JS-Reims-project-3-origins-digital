@@ -2,6 +2,7 @@
   font-family: "Gilroy";
   src: url("../../../fonts/Gilroy-ExtraBold.otf") format("truetype");
 }
+
 @font-face {
   font-family: "Open Sans Light";
   src: url("../../../fonts/OpenSans-Light.ttf") format("truetype");
@@ -26,8 +27,8 @@
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   border-bottom: 1px solid #ff680a;
   padding-bottom: 1rem;;
   margin-bottom: 1rem;
@@ -58,15 +59,54 @@
   width: 10rem;
 }
 
-.edit_button, .delete_button{
-width: 2rem;
-height:2rem;
+.edit_button, .delete_button {
+  width: 2rem;
+  height: 2rem;
 }
 
-.edit_button:hover{
-  color:green;
+.edit_button:hover {
+  color: green;
 }
 
-.delete_button:hover{
-  color:red;
+.delete_button:hover {
+  color: red;
+}
+
+
+/* CSS */
+.upload_button {
+  background: #ff5909;
+  border: 1px solid #ff5909;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.upload_button:hover,
+.upload_button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.upload_button:active {
+  opacity: .5;
+
 }

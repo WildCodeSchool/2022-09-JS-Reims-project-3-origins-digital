@@ -29,6 +29,15 @@ export default function VideosByCategory() {
 
   return (
     <div className="video_grid">
+      <div className="upload">
+        <button
+          className="upload_button"
+          type="button"
+          onClick={() => navigate(`/admin/video/upload`)}
+        >
+          Ajouter une vidéo
+        </button>
+      </div>
       {videos.map((video) => (
         <div className="video_tile">
           <img
