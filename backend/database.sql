@@ -6,7 +6,7 @@ CREATE TABLE user
 	username       VARCHAR(100)        NOT NULL UNIQUE,
 	email          VARCHAR(100)        NOT NULL UNIQUE,
 	hashedPassword VARCHAR(100)        NOT NULL,
-	role        	VARCHAR(15) NOT NULL DEFAULT 'free'
+	role        	VARCHAR(15) NOT NULL DEFAULT 'visitor'
 ) engine = InnoDB
   default charset = latin1;
 
@@ -17,8 +17,10 @@ VALUES ('Charlotte', 'Kieffer', 'Cha', 'kindred242@gmail.com',
 		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin'),
 		('Hugo', 'Rodriguez', 'Yhugzee', 'rodriguez.h@pm.me',
 		 '$argon2id$v=19$m=65536,t=5,p=1$a/ScopyVE0Dr9uik/OXnQw$nDg+1gIMpK+eEXfUAr9JGNtVc0CPFhSzayTaCOLWIMc', 'admin'),
-		('John', 'Doe', 'Jodoe', 'john@doe.com',
-		 '$argon2id$v=19$m=65536,t=5,p=1$xutodeAMLAkk9Y9h1yvkPQ$LT3tDHDiCsovwwXwMuzzo58r5k3OoXEfcRTsOR3075Q', 'visitor');
+		('John', 'Doe', 'Jodoe', 'visitor@visitor.com',
+		 '$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'visitor'),
+		('Jane', 'Doe', 'JaneDoe', 'admin@admin.com',
+		'$argon2id$v=19$m=65536,t=5,p=1$fqJ5foRrofHs73G562DJ2Q$PDRuCNODu9Q5+PT/AzaIfJz3IR4+N/B+R/GoT4DbTU0', 'admin');
 
 
 CREATE TABLE category
@@ -86,4 +88,13 @@ VALUES ('NBA - Résumé VF : Golden State Warriors @ Los Angeles Lakers',
 		("USA BASKETBALL CRAZY 1 ON 1 DRILL! Kevin Durant vs Paul George & More!!!", "USA Basketball brought us one of the best basketball videos with an epic 1on1 drill. Featuring Kevin Durant, Paul George, Devin Booker, Victor Oladipo! This is crazy. Rules are simple first one to 5pts wins and only 2 dribbles.", "2018-07-28", "https://www.youtube.com/embed/ACvLYz9nHvg", "https://i.ytimg.com/vi/ACvLYz9nHvg/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAIhCGAHYAQHiAQYIHRgGIAE=&rs=AOn4CLDcShDiZFPqCHpGr33zpEyJeakWxQ", 2), 
 		("Highlights! Man City 4-2 Tottenham Hotspur | Goals from Alvarez, Haaland and a Mahrez double", "City recovered from conceding two goals in two minutes at the end of the first-half to produce a stunning second 45 and beat Tottenham 4-2 on another memorable night at the Etihad Stadium. The Blues were at their irresistible best when it was needed most to repeat Tottenham's feat by scoring twice in two minutes early after the break through Julian Alvarez and Erling Haaland. Two more from the excellent Riyad Mahrez completed a superb comeback by City who had to dig deep to turn this game around.", 
 		"2023-01-20", "https://www.youtube.com/embed/EbxrP1Mohq8", "https://i.ytimg.com/vi/EbxrP1Mohq8/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAIhCGAHYAQHiAQYIHRgGIAE=&rs=AOn4CLDJUR_uCN1X2MrHfUBG_KCSQpBJ4A", 1), 
-		("Meilleurs buts de l'année 2022", "Meilleurs buts de l'année 2022 ©MNXHD", "2022-12-22", "https://www.youtube.com/embed/4v-rIjHpyEk", "https://i.ytimg.com/vi/4v-rIjHpyEk/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAIhCGAHYAQHiAQYIHRgGIAE=&rs=AOn4CLAEHlJP3FLPMpPrw3Xd1872EDhsfA", 1);
+		("Meilleurs buts de l'année 2022", "Meilleurs buts de l'année 2022 ©MNXHD", "2022-12-22", "https://www.youtube.com/embed/4v-rIjHpyEk", "https://i.ytimg.com/vi/4v-rIjHpyEk/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAIhCGAHYAQHiAQYIHRgGIAE=&rs=AOn4CLAEHlJP3FLPMpPrw3Xd1872EDhsfA", 1),
+		("Philadelphia 76ers vs. New York Knicks Full Game Highlights | Feb 5 | 2022-2023 NBA Season", "Philadelphia 76ers vs. New York Knicks Full Game Highlights | Feb 5 | 2022-2023 NBA Season", "2023-02-06", "https://www.youtube.com/embed/-2QNfO9AnLA", "https://i.ytimg.com/vi/-2QNfO9AnLA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA4cbb-V5j3Fhb3rAdqREiR1_MN2g", 2),
+		("Résumé VF - NBA : Orlando Magic @ Charlotte Hornets", "💪 Paolo Banchero et Wendell Carter Jr répondent aux 33pts de LaMelo Ball...
+		... et permettent à Orlando de battre les Hornets dans un duel de bas de classement ! ✨
+		📉 C'est la 4eme défaite de suite pour Charlotte !", "2023-02-05", "https://www.youtube.com/watch?v=H6qywH22bMQ", "https://i.ytimg.com/vi/H6qywH22bMQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6QB0XWP5EScclv8v9FVScd6V-rg", 2),
+		("Le résumé de Tottenham / Manchester City - Premier League 2022-23 (22ème journée)", "⚽️🏴󠁧󠁢󠁥󠁮󠁧󠁿 Encore plus de Premier League sur myCANAL : https://www.canalplus.com/premier-lea...
+		🔔 Abonnez-vous pour suivre toute l’actu sport de CANAL+ !", "2023-02-05", "https://www.youtube.com/embed/e17Wr_dMlLs", "https://i.ytimg.com/vi/e17Wr_dMlLs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBcROjRFbpsVgXtqkEjuzpLMYlDvA", 1),
+		("Résumé - LaLiga : Barcelone écrase Séville et s'envole en tête du classement !", "👊 Un Barça à réaction écrase Séville et s'envole en tête du classement ! 
+		💥 Alba, Gavi et Raphinha buteurs pour les Blaugranas 
+		📉 Les Andalous ne sont plus qu'à deux petits points de la zone rouge", "2023-02-05", "https://www.youtube.com/embed/LziKvwm-RoE", "https://i.ytimg.com/vi/LziKvwm-RoE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBphs4cjNWduy9TZp39rt8ANYIfBQ", 1);
