@@ -8,7 +8,7 @@ import "./AllVideos.css";
 
 export default function VideosByCategory() {
   const navigate = useNavigate();
-  const { videos } = useContext(VideoContext);
+  const { videos, getVideo } = useContext(VideoContext);
   const { auth } = useContext(AuthContext);
   const deleteVideo = (video) => {
     const { id } = video;
@@ -19,6 +19,7 @@ export default function VideosByCategory() {
       .then((res) => {
         if (res.status === 204) {
           alert("Votre Vidéo a bien été supprimée");
+          getVideo();
         }
         console.warn(res);
       })
