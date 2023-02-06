@@ -6,7 +6,7 @@ import { AuthContext } from "../../../contexts/ContextAuth";
 export default function FormEditVideo() {
   const { id } = useParams();
   const { auth } = useContext(AuthContext);
-  const { updateVideo } = useContext(VideoContext);
+  const { updateVideo, getVideo } = useContext(VideoContext);
 
   const [submitionStatus, setSubmitionStatus] = useState("");
   const titleRef = useRef();
@@ -56,6 +56,7 @@ export default function FormEditVideo() {
       .then((res) => {
         setSubmitionStatus("modif");
         updateVideo(dataPost);
+        getVideo();
         console.warn(res);
       })
       .catch((err) => {
