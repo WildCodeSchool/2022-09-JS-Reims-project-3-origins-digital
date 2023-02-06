@@ -15,7 +15,7 @@ export default function VideosByCategory() {
         <button
           className="upload_button"
           type="button"
-          onClick={() => navigate(`/admin/video/upload`)}
+          onClick={() => navigate(`/admin/videos/upload`)}
         >
           Ajouter une vidéo
         </button>
