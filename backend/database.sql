@@ -18,7 +18,7 @@ VALUES ('Charlotte', 'Kieffer', 'Cha', 'kindred242@gmail.com',
 		('Hugo', 'Rodriguez', 'Yhugzee', 'rodriguez.h@pm.me',
 		 '$argon2id$v=19$m=65536,t=5,p=1$a/ScopyVE0Dr9uik/OXnQw$nDg+1gIMpK+eEXfUAr9JGNtVc0CPFhSzayTaCOLWIMc', 'admin'),
 		('John', 'Doe', 'Jodoe', 'john@doe.com',
-		 '$argon2id$v=19$m=65536,t=5,p=1$xutodeAMLAkk9Y9h1yvkPQ$LT3tDHDiCsovwwXwMuzzo58r5k3OoXEfcRTsOR3075Q', 'free');
+		 '$argon2id$v=19$m=65536,t=5,p=1$xutodeAMLAkk9Y9h1yvkPQ$LT3tDHDiCsovwwXwMuzzo58r5k3OoXEfcRTsOR3075Q', 'visitor');
 
 
 CREATE TABLE category
