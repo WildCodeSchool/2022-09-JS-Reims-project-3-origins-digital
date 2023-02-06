@@ -7,7 +7,7 @@ export default VideoContext;
 
 export function VideoContextProvider({ children }) {
   const [videos, setVideos] = useState([]);
-  useEffect(() => {
+  const getVideo = () => {
     fetch("http://localhost:5000/videos", {
       method: "GET",
     })
@@ -18,6 +18,9 @@ export function VideoContextProvider({ children }) {
       .catch((err) => {
         console.warn(err);
       });
+  };
+  useEffect(() => {
+    getVideo();
   }, []);
 
   const updateVideo = (video) => {
@@ -30,8 +33,9 @@ export function VideoContextProvider({ children }) {
     () => ({
       videos,
       updateVideo,
+      getVideo,
     }),
-    [videos, updateVideo]
+    [videos, updateVideo, getVideo]
   );
 
   return (
@@ -40,6 +44,7 @@ export function VideoContextProvider({ children }) {
     </VideoContext.Provider>
   );
 }
+
 VideoContextProvider.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
