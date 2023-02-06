@@ -1,5 +1,5 @@
 .title-vm {
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   color: orange;
   display: flex;
   flex-direction: row;
@@ -37,35 +37,23 @@
   width: 15vw;
 }
 
-input, textarea {
+.form-input {
   text-indent: 0.5rem;
-}
-
-.description {
-  padding-top: 0.5rem;
-}
-
-.input-title {
-  margin-bottom: 1.5rem;
-}
-
-.description {
-  margin-bottom: 1.5rem;
-}
-
-.link {
-  margin-bottom: 1.5rem;
+  width: 30rem;
+  height: 2rem;
+  border-radius: 30px;
 }
 
 .modify-video {
-  background-color: #28B463;
+  background-color: #28b463;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -85,14 +73,15 @@ input, textarea {
 }
 
 .delete-video {
-  background-color: #BD0000FF;
+  background-color: #bd0000ff;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -109,4 +98,25 @@ input, textarea {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-left: 1rem;
+}
+
+.submitButton {
+  color: #ff680a;
+  background: none;
+  border-radius: 30px;
+  border: 2px solid #ff680a;
+  height: 2rem;
+  width: 10rem;
+  cursor: pointer;
+}
+
+.register_button{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.formEdit{
+  display: flex;
+  flex-direction: column;
 }

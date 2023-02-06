@@ -1,9 +1,23 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("../../../fonts/Gilroy-ExtraBold.otf") format("truetype");
+}
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("../../../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
 .admin-menu {
-  background-color: #333333;
-  border-right: 0.188rem solid white;
-  height: 100vh;
-  width: 20vw;
-  font-family: "Open Sans Light", sans-serif
+  border-right: 0.188rem solid #ff680a;
+  font-family: "Gilroy", sans-serif;
+}
+
+h1 {
+  white-space: nowrap;
+}
+
+h2 {
+  font-family: "Gilroy", sans-serif;
 }
 
 .back {
@@ -11,53 +25,47 @@
 }
 
 .border-header {
-  margin-left: 1rem;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  height: fit-content;
-  width: fit-content;
-  display: flex;
-  margin-bottom: 1.25rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .title {
-  color: #FF680A;
-  font-family: "Open Sans Light", sans-serif
+  color: #ff680a;
+  font-size: 2rem;
+  font-family: "Gilroy", sans-serif;
 }
 
 .border-menu {
-  margin-left: 1rem;
-  padding: 1rem;
-  height: fit-content;
-  width: 15rem;
   display: flex;
   flex-direction: column;
+  padding-left: 1.5rem;
 }
 
 .border-category1 {
   color: #94b1d4;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  height: fit-content;
-  width: fit-content;
   display: flex;
 }
 
 .category-menu {
-  padding-left: 1.25rem;
-  color: #ffffff;
   border: none;
   background: none;
   text-align: left;
-  font-size: 1.5rem;
+  font-family: "Open Sans Light", sans-serif;
 }
 
 .border-category2 {
-  color: #94b1d4;
+  color: white;
   margin-top: 2.188rem;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  height: fit-content;
-  width: fit-content;
   display: flex;
+}
+
+.border-category2:hover {
+  color: #ff680a;
+}
+
+.border-category2:visited {
+  color: #ff680a;
+}
+a {
+  text-decoration: none;
 }

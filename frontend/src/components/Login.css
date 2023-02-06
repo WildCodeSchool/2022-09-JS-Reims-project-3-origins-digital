@@ -3,16 +3,27 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 1rem;
 }
 
 .logo_connect {
-  margin-top: 8rem;
+  margin-top: 5rem;
   width: 12rem;
   height: auto;
   margin-bottom: 2rem;
 }
 
+.Logo_content {
+  width: 10rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.logo_origins {
+  width: 15rem;
+}
 .password_box {
   position: relative;
   margin-top: 1.5rem;
@@ -44,18 +55,23 @@
   border: 2px solid #ff680a;
   height: 2rem;
   width: 10rem;
+  cursor: pointer;
 }
 
-.logo_origins {
-  width: 75%;
-  height: auto;
-}
+.sign_in:hover {
+  color: #FFFFFF;
+  border: 2px solid #ffffff;
+  transition: 0.7s;
+ }
+
 
 .Logo_content {
+  width: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .form_login {
   display: flex;
   flex-direction: column;
@@ -66,8 +82,19 @@
   color: red;
 }
 
+.logo_origins {
+  width: 75%;
+}
+
 @media screen and (min-width: 700px) {
   .logo_origins {
     width: 40%;
+  }
+
+  .Logo_content {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
