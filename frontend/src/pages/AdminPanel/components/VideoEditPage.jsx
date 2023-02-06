@@ -9,7 +9,9 @@ export default function VideoEditPage() {
       <div className="video_list">
         <AdminMenu />
       </div>
-      <FormEditVideo />
+      <div className="form-edit">
+        <FormEditVideo />
+      </div>
     </div>
   );
 }

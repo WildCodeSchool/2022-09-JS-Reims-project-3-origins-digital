@@ -18,6 +18,13 @@ class UserManager extends AbstractManager {
     );
   }
 
+  updateRole(user) {
+    return this.connection.query(
+      `update ${this.table} set role = ? where id = ?`,
+      [user.role, user.id]
+    );
+  }
+
   getUserByEmail(user) {
     return this.connection.query("select * from user where email = ?", [
       user.email,
