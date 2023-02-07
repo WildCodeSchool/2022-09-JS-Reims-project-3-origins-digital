@@ -54,7 +54,7 @@ export default function FormEditVideo() {
       body: JSON.stringify(dataPost),
     })
       .then((res) => {
-        setSubmitionStatus("modif");
+        setSubmitionStatus("La vidéo a été modifiée");
         updateVideo(dataPost);
         getVideo();
         console.warn(res);
@@ -127,8 +127,8 @@ export default function FormEditVideo() {
         </section>
         <div className="register_button">
           <input className="submitButton" type="submit" value="Modifier" />
-          <p>{submitionStatus}</p>
         </div>
+        <p className="status">{submitionStatus}</p>
       </form>
     </div>
   );
