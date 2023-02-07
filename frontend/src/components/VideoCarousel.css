@@ -42,7 +42,7 @@ hr {
   width: 10rem;
   height: auto;
 }
-.lock:hover{
+.lock:hover {
   color: #ff680a;
 }
 .Link-video {
@@ -51,6 +51,5 @@ hr {
 }
 @media screen and (min-width: 992px) {
   .scroll {
-    scroll-snap-type: initial;
   }
 }

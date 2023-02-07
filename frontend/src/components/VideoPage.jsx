@@ -69,15 +69,18 @@ export default function VideoPage() {
               <h3 className="validateInfosEnd"> </h3>
               <h2 className="subtitle"> LANGUES</h2>
               <h3 className="subtitleInfos">French, English, Spanish</h3>
+              <hr className="barre" />
             </div>
-            <hr className="barre" />
-            <VideoCarousel
-              title={categoryVideo.category_name}
-              videos={videos.filter(
-                (clip) => clip.category_id === categoryVideo.id
-              )}
-              category={categoryVideo}
-            />
+            <div className="suggest-slider">
+              <h1 className="suggest">Vidéos suggérer</h1>
+              <VideoCarousel
+                title={categoryVideo.category_name}
+                videos={videos.filter(
+                  (clip) => clip.category_id === categoryVideo.id
+                )}
+                category={categoryVideo}
+              />
+            </div>
           </div>
         </div>
       </div>

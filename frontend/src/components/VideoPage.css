@@ -13,7 +13,6 @@
 .video-player {
   position: relative;
   overflow: hidden;
-  width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
@@ -28,16 +27,12 @@
 }
 
 .video {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding-top: 1rem;
 }
 
 .video-informations {
   padding-top: 4rem;
-  width: 75%;
+  padding: 2rem;
 }
 
 .titlevideo {
@@ -143,7 +138,13 @@
   width: 2rem;
   height: 2rem;
 }
-@media screen and (min-width: 800px) {
+
+.suggest {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+@media screen and (min-width: 992px) {
   .video {
     height: auto;
     width: 70%;
@@ -156,11 +157,18 @@
     justify-content: center;
     align-items: center;
   }
-  .scroll {
-    scroll-snap-type: initial;
-  }
+
   .video-player {
     display: flex;
     justify-content: center;
+  }
+
+  .video-informations {
+    padding: 7rem;
+  }
+
+  .suggest {
+    text-align: center;
+    font-size: 3rem;
   }
 }
