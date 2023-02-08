@@ -101,17 +101,13 @@ button {
   background-color: #ff680a;
 }
 .itemsProfile {
-  font-size: 1rem;
   font-family: "Gilroy", sans-serif;
   background-color: #010d18;
   cursor: pointer;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 30px;
   border: 2px solid #ff680a;
   margin-bottom: 0.5rem;
-  color: #ff680a;
-  height: 1rem;
-  width: 6rem;
 }
 
 .btn_listProfile {
