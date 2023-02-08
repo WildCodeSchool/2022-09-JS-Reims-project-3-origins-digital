@@ -13,16 +13,18 @@
 .username_register,
 .password_register,
 .email {
-  font-size: medium;
+  font-family: "Open Sans Light", sans-serif;
+  font-size: large;
   width: 17rem;
   height: 2rem;
   border-radius: 30px;
   padding-left: 1rem;
-  box-shadow: inset 0 0 1em white, 0 0 2em rgb(65, 66, 66);
   margin-top: 2rem;
 }
 .register_btn {
-  margin-top: 2.8rem;
+  font-size: 1rem;
+  font-family: "Gilroy", sans-serif;
+  margin: 2rem 0 1.5rem 0;
   color: #ff680a;
   background: none;
   border-radius: 30px;
@@ -33,8 +35,8 @@
 }
 
 .register_btn:hover {
-  color: #FFFFFF;
-  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: #ff680a;
   transition: 0.7s;
 }
 
@@ -49,6 +51,7 @@
   height: 1.5rem;
 }
 .modification_p {
+  font-family: "Open Sans Light", sans-serif;
   color: #ff680a;
   margin-top: 2rem;
   font-size: large;

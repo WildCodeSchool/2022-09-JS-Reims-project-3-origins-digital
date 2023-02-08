@@ -108,7 +108,7 @@ export default function Login() {
         {errorInput && <p className="error">Email ou mot de passe incorrect</p>}
       </form>
       <Link to="/register">
-        <p>Créer un compte</p>
+        <p className="creation">Créer un compte</p>
       </Link>
     </div>
   );

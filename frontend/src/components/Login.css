@@ -39,15 +39,17 @@
 
 .username,
 .password {
-  font-size: medium;
+  font-family: "Open Sans Light", sans-serif;
+  font-size: large;
   width: 17rem;
   height: 2rem;
   border-radius: 30px;
   padding-left: 1rem;
-  box-shadow: inset 0 0 1em white, 0 0 2em rgb(65, 66, 66);
 }
 
 .sign_in {
+  font-size: 1rem;
+  font-family: "Gilroy", sans-serif;
   margin: 2rem 0 1.5rem 0;
   color: #ff680a;
   background: none;
@@ -59,11 +61,10 @@
 }
 
 .sign_in:hover {
-  color: #FFFFFF;
-  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: #ff680a;
   transition: 0.7s;
- }
-
+}
 
 .Logo_content {
   width: 75%;
@@ -84,6 +85,11 @@
 
 .logo_origins {
   width: 75%;
+}
+
+.creation {
+  font-family: "Open Sans Light", sans-serif;
+  font-size: 0.9rem;
 }
 
 @media screen and (min-width: 700px) {

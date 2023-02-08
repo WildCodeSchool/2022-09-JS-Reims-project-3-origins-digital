@@ -9,6 +9,7 @@
 }
 
 * {
+  font-size: 1.2rem;
   margin: 0;
   padding: 0;
 }
@@ -28,6 +29,21 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.section-video {
+  width: 78%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 p {

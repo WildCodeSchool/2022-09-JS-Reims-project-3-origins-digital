@@ -3,9 +3,15 @@
   height: 100vh;
   flex: 1;
 }
-.borderTd td {
-  border-bottom: 1px solid #ff680a;
+
+.borderTd {
+  border: 1px solid #ff680a;
 }
+
+.borderTd td {
+  font-family: "Gilroy", sans-serif;
+}
+
 .boxUser {
   display: flex;
   flex: 1;
@@ -18,10 +24,12 @@ select {
   font-family: "Open Sans Light", sans-serif;
   font-size: 1rem;
 }
+
 td {
   color: white;
   padding: 1rem;
 }
+
 tr {
   border-bottom: 1px solid #ff680a;
   font-family: "Open Sans Light", sans-serif;
@@ -32,6 +40,7 @@ tr {
   color: #ff680a;
   align-items: center;
 }
+
 .allUsers_btn {
   color: #ff680a;
   background: none;
@@ -43,8 +52,14 @@ tr {
   font-family: "Gilroy", sans-serif;
   font-size: 1rem;
 }
+
 .allUsers_btn:hover {
   color: #ffffff;
   background-color: #ff680a;
   transition: 0.7s;
+}
+
+.user-box-line {
+  border: 1px solid #ff680a;
+  border-radius: 0px;
 }
