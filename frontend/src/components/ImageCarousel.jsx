@@ -43,19 +43,25 @@ export default function ImageCarousel() {
       </SwiperSlide>
       <SwiperSlide className="swiper-image">
         <img
-          alt="qatar"
+          alt="nfl"
           className="swiper-lazy-loaded"
           src="./src/assets/nfl3.jpg"
         />
       </SwiperSlide>
       <SwiperSlide className="swiper-image">
         <img
-          alt="qatar"
+          alt="mlb"
           className="swiper-lazy-loaded"
           src="./src/assets/mlb3.jpg"
         />
       </SwiperSlide>
-      <SwiperSlide className="swiper-image">Slide 4</SwiperSlide>
+      <SwiperSlide className="swiper-image">
+        <img
+          alt="nfl"
+          className="swiper-lazy-loaded"
+          src="./src/assets/nfl4.jpg"
+        />
+      </SwiperSlide>
       <div className="autoplay-progress" slot="container-end">
         <svg viewBox="0 0 48 48" ref={progressCircle}>
           <circle cx="24" cy="24" r="20" />
