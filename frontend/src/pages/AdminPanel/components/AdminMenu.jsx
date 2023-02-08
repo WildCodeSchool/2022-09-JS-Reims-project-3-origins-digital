@@ -31,9 +31,6 @@ export default function AdminMenu() {
         <NavLink to="/admin/users">
           <h2 className="border-category2">Utilisateurs</h2>
         </NavLink>
-        <h2 className="border-category2">Pages</h2>
-
-        <h2 className="border-category2">Sections</h2>
       </nav>
     </div>
   );
