@@ -12,7 +12,11 @@
 }
 
 select {
-  height: 1rem;
+  height: 1.7rem;
+  width: 5.5rem;
+  border-radius: 30px;
+  font-family: "Open Sans Light", sans-serif;
+  font-size: 1rem;
 }
 td {
   color: white;
@@ -20,6 +24,8 @@ td {
 }
 tr {
   border-bottom: 1px solid #ff680a;
+  font-family: "Open Sans Light", sans-serif;
+  font-size: large;
 }
 
 .RoleModifié {
@@ -32,11 +38,13 @@ tr {
   border-radius: 30px;
   border: 2px solid #ff680a;
   height: 2rem;
-  width: 10rem;
+  width: 8rem;
   cursor: pointer;
+  font-family: "Gilroy", sans-serif;
+  font-size: 1rem;
 }
 .allUsers_btn:hover {
   color: #ffffff;
-  border: 2px solid #ffffff;
+  background-color: #ff680a;
   transition: 0.7s;
 }
