@@ -11,7 +11,9 @@ export default function Home() {
       </header>
       <main>
         <ImageCarousel />
-        <VideosByCategory />
+        <div className="carousel-container">
+          <VideosByCategory />
+        </div>
       </main>
     </div>
   );

@@ -31,6 +31,21 @@ body {
   justify-content: space-around;
 }
 
+.section-video {
+  width: 78%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 p {
   color: white;
 }

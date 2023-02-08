@@ -62,7 +62,7 @@ export default function VideoPage() {
                 {" "}
                 Catégorie : {categoryVideo.category_name}
               </h3>
-              <h2 className="validite"> VALIDITE : </h2>
+              <h2 className="validite"> DATE DE PUBLICATION </h2>
               <h3 className="validateInfosStart">
                 Publié : {video.publication_date}
               </h3>
@@ -72,7 +72,7 @@ export default function VideoPage() {
               <hr className="barre" />
             </div>
             <div className="suggest-slider">
-              <h1 className="suggest">Vidéos suggérer</h1>
+              <h1 className="suggest">Vidéos suggérées</h1>
               <VideoCarousel
                 title={categoryVideo.category_name}
                 videos={videos.filter(
