@@ -13,15 +13,17 @@ export default function VideoPage() {
   const { videos } = useContext(VideoContext);
   const categories = useContext(CategoryContext);
   const [favorite, setFavorite] = useState(false);
-  const handleClick = () => {
-    setFavorite(!favorite);
-  };
+
   const video = videos.find(
     (possibleVideo) => possibleVideo.id === parseInt(id, 10)
   );
   const categoryVideo = categories.find(
     (possibleCategory) => possibleCategory.id === video.category_id
   );
+  const handleClick = () => {
+    setFavorite(!favorite);
+    video.likes = favorite ? video.likes - 1 : video.likes + 1;
+  };
 
   return (
     video && (
@@ -50,6 +52,7 @@ export default function VideoPage() {
                   <FcLikePlaceholder className="favorite" />
                 )}
               </button>
+              <h3 className="likesCounter">{video.likes}</h3>
               <h3 className="description">{video.description_video}</h3>
               <div className="hashtag">
                 <p className="hash">#Football</p>
